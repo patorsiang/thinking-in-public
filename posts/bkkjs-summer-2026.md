@@ -51,7 +51,7 @@ WebMCP กำลังเปลี่ยนวิธีที่ Frontend คุ
 "Vibe Coding" (coding entirely via AI prompts) can reduce a 3-month project to 3 weeks, but it often leaves behind massive technical debt.
 "Vibe Coding" หรือการเขียนโค้ดตาม "Vibe" ผ่าน AI อาจช่วยย่อเวลาจาก 3 เดือนเหลือ 3 สัปดาห์ แต่ก็มักจะทิ้ง Tech Debt กองโตไว้
 
-- **The Trap:** AI often ignores architecture, design patterns, and documentation, leading to "Strategic Fatigue" for humans who must make constant prompting decisions.
+- **The Trap:** AI often ignores architecture, design patterns, and documentation, leading to "Strategic Fatigue" for humans who must constantly make prompting decisions.
     AI มักข้ามเรื่อง Architecture และ Document ทำให้คนจูนต้องเหนื่อยกับการตัดสินใจ (Strategic Fatigue)
   - Why Tech Debt Happens
     - Technical Problems
@@ -78,7 +78,9 @@ WebMCP กำลังเปลี่ยนวิธีที่ Frontend คุ
       - Design patterns
       - Type safety rules
 
-    Example: Set strict templates (like [`thaitype-stack`](https://github.com/thaitype/thaitype-stack-mongodb-template)). Define clear boundaries for type-safety using **Zod** or **TypeBox**.
+    Example: Set strict templates (like [`thaitype-stack`](https://github.com/thaitype/thaitype-stack-mongodb-template)). 
+
+    one topic in his [design patterns](https://github.com/thaitype/thaitype-stack-mongodb-template/blob/main/docs/DESIGN_PATTERNS.md) is about define clear boundaries for type-safety using **Zod** or **TypeBox**.
 
   - **Human:** Move decisions out of your head. Use frameworks like **[Chief Agent Framework](https://github.com/thaitype/chief-agent-framework)** to let agents review code or suggest specs.
         เอาการตัดสินใจออกจากหัว ใช้ Agent ช่วยรีวิวโค้ดและเสนอแนะ
