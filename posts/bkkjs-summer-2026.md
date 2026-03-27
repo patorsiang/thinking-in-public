@@ -92,6 +92,7 @@ WebMCP กำลังเปลี่ยนวิธีที่ Frontend คุ
 > It **amplifies your decisions**
 
 -> If your system is weak → AI makes it worse
+
 -> If your system is strong → AI makes you 10x faster
 
 ---
