@@ -12,7 +12,7 @@ Attending two major tech events in a single day is exhausting but incredibly rew
 
 This post is not a full workshop recap, but rather a **curated highlight of key insights** that changed how I think about AI, development, and the future of software engineering
 
-บทความนี้ไม่ได้สรุป workshop ทั้งหมด แต่เป็น **insight สำคัญที่เปลี่ยนมุมมองของผมเกี่ยวกับ AI และการพัฒนา software**
+บทความนี้ไม่ได้สรุป workshop ทั้งหมด แต่เป็น **insight สำคัญที่เปลี่ยนมุมมองของภัทรเกี่ยวกับ AI และการพัฒนา software**
 
 ---
 
