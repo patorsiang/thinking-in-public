@@ -74,13 +74,10 @@ WebMCP กำลังเปลี่ยนวิธีที่ Frontend คุ
       - Goal
       - Validation
     - **Use templates:**
-      - Project scaffolding
-      - Design patterns
-      - Type safety rules
+      - [Design Patterns](https://github.com/thaitype/thaitype-stack-mongodb-template/blob/main/docs/DESIGN_PATTERNS.md)
+          - Type safety rules: match type with zod scheme
 
     Example: Set strict templates (like [`thaitype-stack`](https://github.com/thaitype/thaitype-stack-mongodb-template)). 
-
-    one topic in his [design patterns](https://github.com/thaitype/thaitype-stack-mongodb-template/blob/main/docs/DESIGN_PATTERNS.md) is about define clear boundaries for type-safety using **Zod** or **TypeBox**.
 
   - **Human:** Move decisions out of your head. Use frameworks like **[Chief Agent Framework](https://github.com/thaitype/chief-agent-framework)** to let agents review code or suggest specs.
         เอาการตัดสินใจออกจากหัว ใช้ Agent ช่วย set rule, plan, tasks, goal, and milestone 
