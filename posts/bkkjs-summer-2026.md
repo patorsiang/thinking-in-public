@@ -39,8 +39,7 @@ WebMCP กำลังเปลี่ยนวิธีที่ Frontend คุ
     Frontend สามารถเตรียมชุดคำสั่งให้ AI เรียกใช้งานได้โดยตรง
 - **On-Device vs. Cloud:** We are seeing a shift towards integrating Cloud AI with **On-Device AI** for specialized, local tasks.
     การผสมผสานระหว่าง AI บนคลาวด์และ AI บนเครื่องเพื่อทำงานเฉพาะทาง
-- **Structural Future:** While MCP is currently "messy," the goal is to make it more structured so developers can implement AI capabilities without needing deep AI expertise.
-    อนาคตของ MCP จะมีโครงสร้างที่ชัดเจนขึ้น ทำให้ Dev ทั่วไปนำไปใช้ได้ง่ายโดยไม่ต้องเป็นผู้เชี่ยวชาญ AI
+- **Future Perspective**: While MCP is still somewhat messy today, as AI models become more capable, they may be able to interact directly with frontends—potentially reducing the need for WebMCP or similar intermediary layers altogether.
 
 ---
 
