@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node (future-proof)
+node_modules/
+dist/
+build/
+
+# Env
+.env
+.env.local
+
+# Editor
+.vscode/
+.idea/
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# Images (optional if large)
+# assets/images/*.psd
+
+# Temporary files
+*.tmp
+*.swp
