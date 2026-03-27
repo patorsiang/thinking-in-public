@@ -111,7 +111,7 @@ You don't always need Kafka or RabbitMQ. For low-to-medium traffic, **Postgres**
 
 ---
 
-## 5. Fully Type-Safe: Server to Client 🔒
+## 5. Fully Type-Safe: Server to Client
 
 **Speaker:** Kongkeit Khynpanitchot
 
