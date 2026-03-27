@@ -83,7 +83,7 @@ WebMCP กำลังเปลี่ยนวิธีที่ Frontend คุ
     one topic in his [design patterns](https://github.com/thaitype/thaitype-stack-mongodb-template/blob/main/docs/DESIGN_PATTERNS.md) is about define clear boundaries for type-safety using **Zod** or **TypeBox**.
 
   - **Human:** Move decisions out of your head. Use frameworks like **[Chief Agent Framework](https://github.com/thaitype/chief-agent-framework)** to let agents review code or suggest specs.
-        เอาการตัดสินใจออกจากหัว ใช้ Agent ช่วยรีวิวโค้ดและเสนอแนะ
+        เอาการตัดสินใจออกจากหัว ใช้ Agent ช่วย set rule, plan, tasks, goal, and milestone 
   - **Checking:** Automated checks (Lint, Unit Tests, Format) are non-negotiable to ensure AI output stays high-quality.
         ต้องมีระบบตรวจอัตโนมัติ (Lint, Test) เพื่อคุมคุณภาพโค้ดจาก AI
     - example of skill: [Grill-me-Skill](https://github.com/mattpocock/skills/blob/main/grill-me/SKILL.md)
