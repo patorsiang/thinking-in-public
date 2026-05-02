@@ -1,0 +1,85 @@
+# Claude 101 — Short Note
+
+- the principles that guide its design (ethic)
+  - avoid toxic or discriminatory outputs
+  - avoid helping humans engage in
+    - illegal or unethical activities
+    - broadly behave as a helpful
+    - honest
+    - harmless
+- core capabilities (baseline of LLM product)
+  - summarization
+  - search
+  - creative
+  - collaborative writing
+  - Q&A
+  - coding
+  - tackle complex problems
+  - and more
+- effective prompts
+  - Set Stage (Objective) - e.g. create a presentation file for a meetup
+  - Define Task (Detail) - including ....
+  - Specify Rules - using `<specific>` template or structure.
+  - (extra) context sources like uploaded file, connectors, or url.
+- Models:
+  - Claude Opus 4.6 (most capable)
+  - Claude Sonnet 4.6 (balanced)
+  - Claude Haiku 4.5 (fastest for quick questions)
+- AI Fluency
+  - the ability to collaborate effectively with AI tools
+  - 4D Framework
+    - Delegation
+      - Deciding on what work should be done by humans, what work should be done by AI
+      - making strategic choices about collaboration
+    - Description
+      - defining outputs
+      - guiding AI processes
+      - specifying desired AI behaviors and interactions.
+    - Discernment - assessing quality, accuracy, appropriateness, and determining areas for improvement
+      - A simple eval approach
+        1. Gather examples - Collect 5-10 examples of a task you do regularly
+        2. Create test prompts - Write prompts that would generate similar outputs
+        3. Compare outputs - Run your prompts and compare
+        4. Refine your approach
+    - Diligence - Using AI responsibly and ethically
+- mode
+  - Chat: used for asking questions, brainstorming, drafting, or working through problems back and forth.
+  - Cowork: ability
+    - Folder access
+    - Scheduled tasks
+    - Subagents - spins up to handle parts of a task in parallel
+    - Dispatch - A persistent conversation thread that allows you to continue your Cowork conversations from your phone
+    - Project - group related tasks into dedicated workspaces
+    - Plugins - compliance framework
+    - Protected environment - access anything with folder
+  - Code
+    - works directly in your codebase
+    - reading what's there, writing and modifying code, running commands
+- Organizing work and knowledge
+  - Project
+    - self-contained workspaces
+    - scope knowledge
+    - scope instruction to guide Claude's behavior
+      - Context
+      - Process
+      - Tone and style preferences
+      - Specific requirements
+    - enables Retrieval Augmented Generation (RAG) - for large context
+  - Artifacts (shareable): standalone, interactive outputs e.g. Documents, Code snippets, HTML pages, SVG images, React components
+    - published artifact: Share it with anyone via link, and others can "remix" it in their own Claude conversations
+  - Skills
+    - folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks
+    - teach Claude how to complete specific tasks in a repeatable way.
+    - Type
+      - Anthropic Skills
+      - Custom Skills -> like a pattern or common mistake or template
+- expanding scope by
+  - Extensions
+  - Model Context Protocol (MCP)
+  - Enterprise search - particularly valuable for questions that span multiple sources or require synthesizing information from across your organization -- remain private
+  - Research mode -- requires pulling together information from multiple sources, comparing different perspectives, and synthesizing findings into actionable insights.
+    - Prompt:
+      - Be specific about your goals
+      - Specify the sections or structure you want
+      - Include relevant constraints
+      - Ask Claude to help refine your prompt
