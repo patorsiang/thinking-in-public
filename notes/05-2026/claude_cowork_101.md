@@ -53,3 +53,5 @@
 - Share what you build with your team
   - Scaling workflows across your team
   - Distributing a plugin in your organization
+- ** A Cowork project's memory stays inside that project, while chat memory applies across all your conversations
+- ** A scheduled task was due while your computer was asleep, Cowork runs the task as soon as you're back and lets you know it was delayed
