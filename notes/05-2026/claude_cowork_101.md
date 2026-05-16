@@ -1,0 +1,55 @@
+# Introduction to Claude Cowork — Short Note
+
+- Chat is for thinking. Cowork is for delegating. Code is for building. Most knowledge workers will live in Chat and Cowork — and use them for very different things.
+- Connectors and MCPs: different channels that agents use to reach external tools
+  - Connectors: direct integrations with specific services (e.g., Google Drive, Slack, Gmail)
+  - MCPs (Model Context Protocol): a broader framework for connecting Claude to various tools and services
+- What makes a task right for Cowork:
+  - multi-step
+  - act with real files on your computer like PDF
+    - can be specific environment like download folder
+  - spanning (bridging) multiple tools
+  - Dispatch: send a task from your phone to an agent in a desktop
+- flow:
+  - make a plan
+  - refine the plan
+  - execute
+- prompt
+  - with three things:
+    - name of the deliverable task
+    - name of inputs
+    - additional specifics or nuances (differences)
+  - 3 points should be concerned
+    - Be specific about destructive verbs
+    - Name the bounds in the prompt.
+    - Use scheduled tasks for drafts initially.
+- Standing context: Global instructions and projects
+  - Global instructions: the brief that applies to every session
+- Skill
+  - Instructions (the SKILL.md file)
+  - Assets: Logos, brand templates, slide masters, fonts. The raw materials the skill uses to produce real-looking output.
+  - References: Examples of good output, style guides, clause libraries, the past work you'd hand a new teammate as the bar to match
+  - Scripts: Small pieces of code
+- Plugins: Encode your team's expertise
+  - A plugin is a packaged set of skills built around a job.
+  - Plugins teach Claude your team's way of working
+  - Anthropic publishes plugins for common roles
+  - 2 types
+    - An end-to-end process bundled together
+    - A team's most-used skills bundled together
+- Claude integrates with various tools and services through connectors and extensions, including support for Chrome and Microsoft 365.
+- ** Best practices for working safely
+  - Use a dedicated working folder, not a catch-all
+  - Back up anything irreplaceable before you start.
+  - Test new workflows on copies first.
+- In the moment: the three checks that catch the rest
+  - Read the plan once it has been made.
+  - Watch for unexpected patterns.
+  - Approve confirmation prompts deliberately.
+- When Cowork isn't the right tool
+  - Regulated workflows that need an audit trail.
+  - Anything you wouldn't trust a smart, quick colleague to do unsupervised.
+  - Highly sensitive personal data
+- Share what you build with your team
+  - Scaling workflows across your team
+  - Distributing a plugin in your organization

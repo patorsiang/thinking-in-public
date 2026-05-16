@@ -1,0 +1,66 @@
+# Claude Code 101 — Short Note
+
+- an agentic coding tool that understands your codebase, edits your files, runs commands, and integrates with your existing developer tools
+- which has direct access to your files, your terminal, and your entire codebase. Instead of copying and pasting code
+- An AI Agent is software that can interact with its environment and perform actions to complete a defined goal
+- function
+  - Read and understand your codebase
+  - Edit files across your project
+  - Run terminal commands
+  - Search the web
+- how to use it effectively (keep these three concepts in mind):
+  - The context window.
+    - the context is how much of your conversation, file contents, command outputs, and more it can store and reference
+    - Think of this as working memory. It can hold a lot, but not everything at once.
+  - It asks for permission.
+    - several modes:
+      - Default behavior (Approval mode): Claude asks for explicit permission before running shell commands, but can edit files with your approval context
+      - Plan mode: Uses read-only tools to compile a plan of action before starting any work
+  - It can make mistakes.
+- how it work: ![flow](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F8lsy243ftffjjy1cx9lm3o2bw%2Fpublic%2F1775686365%2Fagenticloop.1775686365141.jpg)
+- ideal way to use as workflow is: Explore → Plan → Code → Commit Workflow
+  - Explore and Plan: using plan mode: `I need to add WebP conversion to our image upload pipeline. **Figure out where** in the pipeline it should happen, whether we need new dependencies, and how to approach it.
+  - Code:
+    - Define a success criteria
+    - Add tools
+    - Include a test suite
+    - for saving token, ask it to save the solution to its CLAUDE.md file.
+  - Commit
+- Context Management:
+  - working memory. Every file it reads, every command it runs, every message you send — it all takes up space in the context window. ![context window](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F8lsy243ftffjjy1cx9lm3o2bw%2Fpublic%2F1775686395%2Fvideo6contextwindowdiagram.1775686395676.jpg)
+    - When Context Fills Up, the context window is automatically compacted. and this process can potentially lose details.
+    - compeat it manually (with `/compact`) when you want to free up context space
+    - `/clear` This removes everything.
+    - `/context` check
+  - Tips for Saving Context Space
+    - Be specific.
+    - Manage your MCP servers.
+    - Use subagents: Subagents run in parallel with your main agent but have a completely separate context window.
+- Code review
+  - using an agentic coding tool to review your changes by another agent (subagent)
+  - A skill handles the commit, push, and PR creation workflow
+- custominzing an agentic coding tool
+  - CLAUDE.md: persistent memory ![example](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F8lsy243ftffjjy1cx9lm3o2bw%2Fpublic%2F1775686400%2Fvideo8claudemdexample.1775686400069.jpg)
+    - Example: include relevant file references like @README.md to provide context
+    - without a CLAUDE.md file, it starts fresh every time. It has to re-explore your codebase, figure out what dependencies are needed, and understand what features are already implemented
+  - subagents:
+    - delegate tasks to subagents that break them down and run component tasks in parallel
+    - `/agents`: Create or manage new agents
+  - skills
+    - is script: to explain to agent what task you want to repeat with and detail.
+  - Model Context Protocol (MCP):
+    - connect to external tools and data sources.
+    - tools to better handle your query.
+  - Hooks:
+    - is the field in the IDE configuration
+    - Common use cases include:
+      - Auto-formatting after file edits
+      - Logging all executed commands for compliance
+      - Blocking dangerous operations like modifying production files
+      - Sending yourself notifications when Claude finishes a task
+    - The available events are:
+      - PreToolUse — runs before a tool call
+      - PostToolUse — runs after a tool call completes
+      - UserPromptSubmit — runs when you submit a prompt, before Claude processes it
+      - Stop — runs when Claude finishes responding
+      - Notification — runs when Claude sends a notification
