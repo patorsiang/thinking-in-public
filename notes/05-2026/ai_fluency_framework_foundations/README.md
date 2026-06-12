@@ -1,0 +1,121 @@
+# AI Fluency: Framework & Foundations
+
+- how to collaborate with AI system as trust partner. Finding possibility with AI.
+- a practical bunch of skill in 4 keys:
+  - effective
+  - efficient
+  - ethical
+  - safe
+- 4Ds
+  - Delegation: when should human do the work and when should AI?
+    - understand your goal and the problem that you are trying to solve.
+    - know what AI systems can and can't do well
+    - Decide how to divide the work between you and the AI
+    - Generative AI fundamentals (FYI)
+      - Traditional vs Generative AI
+        - Traditional AI → analyzes patterns and solves specific tasks
+        - Generative AI → trains on data, analyzes patterns, and generates human-like language and content
+      - three pillars
+        - algorithms (understand language in context)
+          - Neural networks: inputs → predict what is the next token
+          - transformers
+        - data
+          - articles and websites
+          - code and multimodal content
+        - computation (massive)
+          - GPUs, TPUs, etc.
+          - Computing clusters
+      - AI context window:
+        - prompts (your instructions)
+        - AI responses
+        - Any other info you've shared
+      - What makes generative AI powerful
+        - processes vast information during training and learns complex patterns.
+        - adapts to new tasks through in-context learning
+        - demonstrates emergent capabilities from scale
+      - Capabilities and limitations
+        - Knowledge cutoff date: Claude's training data extends through January 2025
+        - Hallucination: generates plausible-sounding but inaccurate or fabricated information
+          - Causes include: training data limitations, token prediction uncertainties, out-of-distribution prompts, and context window constraints
+        - Non-deterministic output: produces varied responses even with identical prompts (due to sampling in the generation process)
+        - Reasoning limitations: Extended thinking helps Claude tackle complex problems by spending more computational effort on reasoning before responding
+      - Human vs AI comparison
+        - Human strengths
+          - critical thinking
+          - judgment
+          - creativity
+          - ethical oversight
+        - AI strengths
+          - speed and scale
+          - pattern recognition
+          - processing vast information rapidly
+  - Description: How do we communicate clearly with AI systems?
+    - what you want the final output to be
+    - how you want the AI to approach the task
+    - How you want the AI to behave -- tone and style
+    - Don't make AI guessing your mind; tell it step by step like a cookbook
+    - Think of AI as your partner
+    - Explain task, ask questions, provide context, and guide the interaction
+    - Build a shared thinking environment
+    - Effective Prompting Techniques
+      - What we want (output goals)
+      - How we want it done (approach and method)
+      - How we want to interact with the AI (tone, style, format)
+      - Prompt engineering is simply the practice of designing effective instructions for AI systems
+      - tips:
+        - context (background information)
+        - example (show, don't just tell)
+        - output constraints (format, length, structure)
+        - breakdown (step-by-step reasoning)
+        - space to think (allow extended thinking for complex problems)
+        - roles/persona (assign a perspective for the AI to adopt)
+  - Discernment: How do we evaluate what AI gives us?
+    - Is the output useful and correct?
+    - Is the AI taking the right approach?
+    - Is the AI behaving as desired?
+    - Need: Domain experts and understanding of how AI systems work and their typical limitations
+    - checklist
+      - for product quality
+        - Is it factually accurate?
+        - Is it appropriate to audience and purpose?
+        - Is it coherent and well-structured?
+        - Does it meet my requirements?
+        - Does it add value?
+      - for process quality
+        - logical inconsistencies
+        - lapses in attention
+        - inappropriate steps
+        - getting stuck on one small detail
+        - getting trapped in circular reasoning
+      - for interaction performance
+        - Communicates information at the right level
+        - Responsive to feedback
+        - Interacts efficiently
+      - feedback and correction
+        - Specify the problem clearly
+        - Clearly explain why it is a problem
+        - Provide concrete suggestions for improvement
+        - Revise the instructions or examples based on feedback
+  - Diligence: How do we ensure our interaction with AI is responsible, transparent, and accountable?
+    - Ensuring accuracy and taking responsibility for outputs
+    - Honesty and transparency in AI limitations and capabilities
+    - Ethical use and critical awareness
+      - personal guidelines
+      - organizational policies
+      - professional standards
+      - industry codes of conduct
+      - legal and regulatory requirements
+    - Fair, safe, and beneficial outcomes
+- [Vocabulary](./AI_Fluency_vocabulary_cheat_sheet.pdf)
+- Three ways to interact with AI
+  - Automation: following fixed instructions → when you have a clear, well-defined outcome
+  - Augmentation: collaboratively work together → AI acts as creative and solving partner
+  - Agency: operates independently on your behalf → assign role and rough direction; AI acts with autonomy to handle unforeseen cases
+  - implementation steps:
+    - Set up vision and goals of project
+    - Task breakdown and delegation analysis
+    - Execute your project using description-discernment loops
+      - Describe (communicate clearly)
+      - Discern (evaluate output quality)
+      - Refine (provide feedback)
+      - Integrate (use the result and iterate)
