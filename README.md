@@ -67,6 +67,7 @@ Suggested paths:
 | --- | --- |
 | [Vibe Coding & Agentic AI: Key Takeaways from ChaiyoGCP & Build with AI Bangkok 2026](posts/gdg-buildwithai-2026.md) | AI-assisted development, agentic systems, GenUI, and event reflections |
 | [Insights from BKK.js Summer 2026](posts/bkkjs-summer-2026.md) | Web performance, WebAssembly, WebMCP, AI-assisted engineering, and event reflections |
+| [What I Learned From 4 Months Without AI Coding Tools (and 2 Months With Them)](posts/four-months-without-ai-2026.md) | Working on probation without agentic AI, adopting Claude and Antigravity, code review habits, and context management |
 
 ## Notes Index
 
