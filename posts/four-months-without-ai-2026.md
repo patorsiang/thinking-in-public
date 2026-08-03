@@ -2,9 +2,9 @@
 
 > Probation without any agentic AI, then Claude and Antigravity — and what actually changed
 
-I finished my MSc in Advanced Computer Science at the University of Kent and recently came back to work. My first months back were spent on probation with a small dev team building a **CTF and cybersecurity learning platform** — no Claude, no agentic AI, just me and the codebase, while four colleagues on the same team worked with full Claude access.
+I finished my MSc in Advanced Computer Science at the University of Kent and recently came back to work. My first months back were spent on probation with a small product team building a **CTF and cybersecurity learning platform** — no Claude, no agentic AI, just me and the codebase, while everyone who had already passed probation had access to AI-assisted tools.
 
-ภัทรเรียนจบ MSc Advanced Computer Science ที่ University of Kent แล้วเพิ่งกลับมาทำงานอีกครั้ง ช่วงแรกที่กลับมาคือช่วงทดลองงานกับทีมเล็กๆ ที่ทำ **แพลตฟอร์มเรียนรู้ด้าน CTF และ Cybersecurity** ตอนนั้นภัทรยังไม่มี Claude หรือ AI Agent ใดๆ เลย มีแค่ตัวเองกับ codebase ในขณะที่เพื่อนร่วมทีมอีก 4 คนใช้ Claude ได้เต็มที่ค่ะ
+ภัทรเรียนจบ MSc Advanced Computer Science ที่ University of Kent แล้วเพิ่งกลับมาทำงานอีกครั้ง ช่วงแรกที่กลับมาคือช่วงทดลองงานกับทีมพัฒนา product เล็กๆ ที่ทำ **แพลตฟอร์มเรียนรู้ด้าน CTF และ Cybersecurity** ตอนนั้นภัทรยังไม่มี Claude หรือ AI Agent ใดๆ เลย มีแค่ตัวเองกับ codebase ในขณะที่ทุกคนที่ผ่านโปรแล้วมีสิทธิ์ใช้เครื่องมือ AI ช่วยทำงานค่ะ
 
 This post is not a "how AI made me 10x" story. It is a note about what those two periods actually felt like, and what I am still figuring out.
 
@@ -14,9 +14,9 @@ This post is not a "how AI made me 10x" story. It is a note about what those two
 
 ## 1. The Setup
 
-The company is small, so everyone wears every hat. In a given week I might touch **BA, SA, frontend, backend, DevOps, QA, and UX/UI design**.
+The company is small, so everyone wears every hat. In a given week I might touch **BA, SA, frontend, backend, DevOps, QA, and UX/UI designer**.
 
-บริษัทเป็นบริษัทเล็ก ทุกคนเลยต้องทำได้หลายบทบาท ในหนึ่งสัปดาห์ภัทรอาจได้แตะทั้ง **BA, SA, Frontend, Backend, DevOps, QA และ UX/UI Design**
+บริษัทเป็นบริษัทเล็ก ทุกคนเลยต้องทำได้หลายบทบาท ในหนึ่งสัปดาห์ภัทรอาจได้แตะทั้ง **BA, SA, Frontend, Backend, DevOps, QA และ UX/UI Designer**
 
 That matters for this story: when a team works this way, AI leverage (or the lack of it) does not only show up in coding. It shows up everywhere.
 
@@ -26,13 +26,13 @@ During probation — about four months — I did all of it without any AI coding
 
 ตลอดช่วงทดลองงานประมาณ 4 เดือน ภัทรทำงานทั้งหมดนี้โดยไม่มี AI ช่วยเขียนโค้ดเลย
 
-I do not think that was an accident. My read is that the company wanted to see how I handled tasks **without** AI first — whether I could read an unfamiliar codebase, follow conventions, and ship something correct on my own. Probation is the one window where they can actually measure that, because once the tools are on, it gets hard to tell where my judgement ends and the model's output begins.
+That was intentional: the company wanted to see how I handled tasks **without** AI first. In a way, it matched how I had worked academically too — during my MSc, I rarely used AI for serious coding work, so I was used to learning by reading, trying, and debugging slowly. Probation became a clearer test of that baseline: could I read an unfamiliar codebase, follow conventions, and ship something correct on my own?
 
-ภัทรไม่คิดว่านี่เป็นความบังเอิญนะคะ ภัทรเข้าใจว่าบริษัทอยากเห็นก่อนว่าถ้า **ไม่มี AI** ภัทรจะรับมือกับงานได้แค่ไหน อ่าน codebase ที่ไม่คุ้นเคยได้ไหม ทำตาม convention ได้ไหม และส่งงานที่ถูกต้องด้วยตัวเองได้ไหม ช่วงทดลองงานเป็นช่วงเดียวที่วัดเรื่องนี้ได้จริง เพราะพอเปิดเครื่องมือให้ใช้แล้ว มันจะแยกยากมากว่าอันไหนคือการตัดสินใจของเรา และอันไหนคือผลลัพธ์ที่โมเดลสร้างขึ้นมา
+นี่เป็นความตั้งใจของบริษัทค่ะ บริษัทอยากเห็นก่อนว่าถ้า **ไม่มี AI** ภัทรจะรับมือกับงานได้แค่ไหน ซึ่งจริงๆ ก็ใกล้กับวิธีที่ภัทรเรียนมาตอน MSc ด้วย เพราะตอนเรียนภัทรแทบไม่ได้ใช้ AI กับงาน coding จริงจังมากนัก เลยคุ้นกับการเรียนจากการอ่าน ลองเอง debug เอง และค่อยๆ ทำความเข้าใจ ช่วงทดลองงานเลยกลายเป็นการวัด baseline ที่ชัดขึ้นว่า ภัทรอ่าน codebase ที่ไม่คุ้นเคยได้ไหม ทำตาม convention ได้ไหม และส่งงานที่ถูกต้องด้วยตัวเองได้ไหม
 
-Knowing that changed how I felt about the four months. It was not "everyone else got the good tools and I did not." They were taking a baseline — and honestly, that is fair.
+Thinking about it that way changed how I felt about the four months. It was not just "everyone else got the good tools and I did not." The company was taking a baseline, and honestly, that was useful.
 
-พอคิดได้แบบนี้ ความรู้สึกต่อ 4 เดือนนั้นก็เปลี่ยนไปค่ะ มันไม่ใช่ "คนอื่นได้เครื่องมือดีๆ แต่เราไม่ได้" แต่มันคือการวัดพื้นฐานของเรา ซึ่งพูดตรงๆ ก็เป็นการวัดที่แฟร์ดี
+พอคิดได้แบบนี้ ความรู้สึกต่อ 4 เดือนนั้นก็เปลี่ยนไปค่ะ มันไม่ใช่แค่ "คนอื่นได้เครื่องมือดีๆ แต่เราไม่ได้" แต่บริษัทกำลังวัดพื้นฐานของภัทร และพูดตรงๆ มันก็เป็นเรื่องที่มีประโยชน์มาก
 
 ---
 
@@ -61,9 +61,9 @@ On the backend it was slower but more straightforward — I could follow the tea
 
 ## 3. Getting Access to Claude
 
-After probation I got access to **Claude (chat, Claude Code, and Design)** and the **Antigravity CLI (Google's agentic coding tool)**. This is my first time working with agentic AI in a real job.
+After probation I got access to **Claude (chat and Claude Code)**, AI-assisted design workflows, and the **Antigravity CLI (Google's agentic coding tool)**. This is my first time working with agentic AI in a real job.
 
-หลังผ่านโปร ภัทรได้ใช้ **Claude (ทั้ง chat, Claude Code และ Design)** และ **Antigravity CLI (เครื่องมือ agentic coding ของ Google)** นี่เป็นครั้งแรกที่ภัทรได้ทำงานกับ Agentic AI ในงานจริง
+หลังผ่านโปร ภัทรได้ใช้ **Claude (ทั้ง chat และ Claude Code)**, workflow ด้าน design ที่มี AI ช่วย และ **Antigravity CLI (เครื่องมือ agentic coding ของ Google)** นี่เป็นครั้งแรกที่ภัทรได้ทำงานกับ Agentic AI ในงานจริง
 
 The speed-up was real. Work that would have taken me **2–3 days** started landing in **3–5 hours**.
 
@@ -73,9 +73,9 @@ But the tasks got harder too. Faster delivery meant harder tickets, not lighter 
 
 แต่งานก็ยากขึ้นด้วย พอทำได้เร็วขึ้น งานที่ได้รับก็ยากขึ้นตาม ไม่ได้แปลว่าสัปดาห์จะสบายขึ้น
 
-Honestly, some of those tasks I do not think I would have finished at all without Claude.
+Honestly, some of the newer and harder tickets were the kind of work I do not think I could have finished at that pace without Claude.
 
-พูดตรงๆ คืองานบางชิ้น ถ้าไม่มี Claude ภัทรก็คงทำไม่เสร็จเลยค่ะ
+พูดตรงๆ คืองานที่ใหม่และยากขึ้นบางชิ้น ถ้าไม่มี Claude ภัทรไม่คิดว่าจะทำให้เสร็จในจังหวะนั้นได้ค่ะ
 
 ---
 
@@ -102,7 +102,29 @@ I had been avoiding writing skills, config, and context files because I thought 
 
 ---
 
-## 5. What I Am Still Figuring Out
+## 5. Necessary, or Just Not Optional?
+
+Here is the honest version: after two months with Claude, I still do not think agentic AI is strictly **necessary**. The four months proved that. The work shipped — slower, but it shipped, and I understood every line I sent for review.
+
+ขอเล่าตามตรงนะคะ หลังจากใช้ Claude มาสองเดือน ภัทรก็ยังไม่คิดว่า Agentic AI เป็นสิ่งที่ **จำเป็น** ขนาดนั้น เพราะ 4 เดือนก่อนหน้าก็พิสูจน์แล้วว่างานยังเดินได้ ช้ากว่าจริง แต่มันเสร็จ และภัทรเข้าใจโค้ดทุกบรรทัดที่ส่งไปรีวิว
+
+But "necessary" turns out to be the wrong bar. Working alone, AI is optional. On a team where other people already use it well, the pace of the work is set by the team's workflow, not just by me. Being the only one not using it does not just make me slower — it can make me the slow step inside someone else's task.
+
+แต่คำว่า "จำเป็น" อาจไม่ใช่เกณฑ์ที่ถูกค่ะ ถ้าทำงานคนเดียว AI เป็นแค่ตัวเลือก แต่ในทีมที่คนอื่นใช้มันได้คล่องอยู่แล้ว จังหวะของงานจะถูกตั้งโดย workflow ของทีม ไม่ใช่โดยภัทรคนเดียว การเป็นคนเดียวที่ไม่ได้ใช้ ไม่ได้แปลว่าแค่เราช้า แต่บางครั้งแปลว่าเรากลายเป็นขั้นตอนที่ช้าอยู่ในงานของคนอื่นด้วย
+
+That was the real pressure during those four months — not that I could not do the work, but that I was doing it at a different speed from everything around me. So when I finally got access, the goal was never just "use AI." It was **use it well enough to match the team on both speed and quality**.
+
+นั่นคือแรงกดดันจริงๆ ของ 4 เดือนนั้น ไม่ใช่ว่าภัทรทำงานไม่ได้ แต่คือภัทรทำงานด้วยความเร็วที่ต่างจากทุกอย่างรอบตัว พอได้สิทธิ์ใช้จริงๆ เป้าหมายเลยไม่ใช่แค่ "ใช้ AI ให้เป็น" แต่คือ **"ใช้ให้ดีพอที่จะตามทีมให้ทัน ทั้งความเร็วและคุณภาพ"**
+
+At the same time, I cannot let the fundamentals go. The four months proved that work can still ship without agentic AI. The last two months proved something else: harder work can move much faster with it, but only if I can still review the output. So I am trying to hold both at once: move at the team's pace, and keep learning the things that do not come from a prompt.
+
+แต่ในขณะเดียวกัน ภัทรก็ทิ้งพื้นฐานไม่ได้ 4 เดือนแรกพิสูจน์ว่างานยังเดินได้แม้ไม่มี Agentic AI ส่วน 2 เดือนหลังพิสูจน์อีกอย่างว่า งานที่ยากขึ้นสามารถเดินได้เร็วขึ้นมากถ้ามีเครื่องมือช่วย แต่ต้องเป็นกรณีที่ภัทรยังรีวิวผลลัพธ์ของมันได้จริง ภัทรเลยพยายามถือสองอย่างนี้ไว้พร้อมกัน คือวิ่งให้ทันจังหวะของทีม และเรียนรู้สิ่งที่ไม่ได้มาจากการพิมพ์ prompt ต่อไปค่ะ
+
+> AI was never necessary. It just stopped being optional.
+
+---
+
+## 6. What I Am Still Figuring Out
 
 I am still tuning the setup. Right now that means:
 
@@ -125,17 +147,13 @@ If the workflow settles into something that actually works, I would like to writ
 
 ## Personal Reflection / มุมมองส่วนตัว
 
-The four months without AI tools were slower, but they built a habit of reading and reviewing code closely. That habit is exactly what makes the last two months useful — it is how I notice when Claude's output does not fit the codebase.
+The risk I see now is losing the review habit by delegating everything. So the thing I am working on is not really a config problem — it is choosing, deliberately, what to hand to AI and what to keep doing myself.
 
-4 เดือนที่ไม่มี AI นั้นช้ากว่าจริง แต่มันสร้างนิสัยการอ่านและรีวิวโค้ดอย่างละเอียด และนิสัยนั้นแหละที่ทำให้ 2 เดือนหลังมีประโยชน์ เพราะมันคือสิ่งที่ทำให้ภัทรรู้ว่าโค้ดจาก Claude ชิ้นไหนไม่เข้ากับ codebase
+ความเสี่ยงที่ภัทรเห็นตอนนี้คือการเสียนิสัยการรีวิวไปเพราะโยนงานให้ AI ทำหมด สิ่งที่ภัทรกำลังแก้จึงไม่ใช่แค่เรื่อง config แต่คือการ "เลือกอย่างตั้งใจ" ว่าอะไรจะให้ AI ทำ และอะไรที่เราควรทำเอง
 
-The risk I see now is losing that habit by delegating everything. So the thing I am working on is not really a config problem — it is choosing, deliberately, what to hand to AI and what to keep doing myself.
+If those four months gave me a baseline, this is the part worth protecting: not the slowness, but the judgement that lets me tell whether the tool is helping or quietly drifting away from the codebase.
 
-ความเสี่ยงที่ภัทรเห็นตอนนี้คือการเสียนิสัยนั้นไปเพราะโยนงานให้ AI ทำหมด สิ่งที่ภัทรกำลังแก้จึงไม่ใช่แค่เรื่อง config แต่คือการ "เลือกอย่างตั้งใจ" ว่าอะไรจะให้ AI ทำ และอะไรที่เราควรทำเอง
-
-Which brings me back to the baseline. If those four months were a test of what I can do without AI, the thing being measured turned out to be the same thing that makes the tools worth having. Protecting it is not nostalgia for the slow months — it is keeping the part of the job that AI cannot check for me.
-
-ซึ่งพอคิดแบบนี้ก็วนกลับมาที่เรื่องการวัดพื้นฐานอีกครั้ง ถ้า 4 เดือนนั้นคือการทดสอบว่าถ้าไม่มี AI ภัทรทำอะไรได้บ้าง สิ่งที่ถูกวัดในตอนนั้นก็คือสิ่งเดียวกับที่ทำให้เครื่องมือพวกนี้มีค่าในวันนี้ การรักษามันไว้จึงไม่ใช่การคิดถึงวันที่ทำงานช้าๆ แต่คือการรักษาส่วนของงานที่ AI ตรวจแทนเราไม่ได้ค่ะ
+ถ้า 4 เดือนนั้นทำให้ภัทรเห็น baseline ของตัวเอง สิ่งที่ควรรักษาไว้จริงๆ ไม่ใช่ความช้า แต่คือ judgement ที่ทำให้ภัทรดูออกว่าเครื่องมือกำลังช่วยอยู่ หรือกำลังค่อยๆ พาโค้ดหลุดจากทิศทางของ codebase ค่ะ
 
 > Still tuning. Still learning.
 
