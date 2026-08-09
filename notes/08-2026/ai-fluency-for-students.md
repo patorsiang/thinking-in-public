@@ -1,0 +1,66 @@
+# AI Fluency for Students
+
+> effective, efficient, ethical, and safe for a student - 4D
+
+- AI in learning partner
+  - use cases
+    - tips
+    - guide
+    - explanation
+    - feedback
+    - practice
+    - act as a student
+  - steps
+    - Establishing the learning partner's role
+    - Creating your study protocols for example:
+      - For problem-solving: "Guide me with hints and questions, don't solve it for me"
+      - For concept review: "Test my understanding with progressively harder questions"
+      - For exam prep: "Quiz me and explain why wrong answers are wrong (and why correct answers are correct)"
+      - For writing: "Help me develop my own arguments through questioning"
+      - For reading comprehension: "Ask me to explain key concepts in my own words"
+      - For general planning: "Gather information from me about my various commitments so I can effectively plan out coursework and other activities I need to complete/attend"
+      - For specific assignment planning: "Help me test my understanding of this assignment brief so I am sure I understand what is expected of me"
+    - Testing your learning partner
+- AI in career planning
+  - AI provides information
+    - opportunity
+    - skill alignment
+      - role play
+      - feedback
+      - practice scenarios
+    - industry trends
+    - broad research
+    - salary and market insight
+    - trajectories
+    - brainstorming role
+    - career coaching
+      - storytelling
+      - practice interview
+  - I provide reflection
+    - energy driven
+    - acceptable tradeoff
+    - value
+    - lifestyle
+- Human in the loop
+  - Drafting Your Policy:
+    - Define clear boundaries
+    - Specify your approach:
+      - AI as tutor/coach, not homework completer
+      - Maintaining ability to explain everything I submit
+      - Using AI to enhance understanding, not bypass it
+      - Specific strategies that have worked for me
+    - Define your disclosure standards:
+      - When I'll proactively disclose AI assistance
+      - How I'll document AI contributions
+      - What level of detail I'll provide
+      - How I'll handle ambiguous situations
+    - Protect your capabilities:
+      - Core skills I'll practice without AI
+      - Regular "AI-free" work to maintain abilities
+      - How I'll verify I'm still learning
+      - Signs that I'm over-relying on AI (and signs that I may be under-utilizing AI!)
+    - Your personal ethics:
+      - Accuracy and fact-checking responsibilities
+      - Respect for others' work and ideas
+      - Privacy and data considerations
+      - Other impacts of AI and computer use
