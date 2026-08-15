@@ -153,7 +153,7 @@ Watching BKK.js Summer 2026 made me realize that the boundary between "Web Devel
 
 ### Resources & Credits
 
-- [BKK.js 24 Summer 2026 Live Stream](www.facebook.com/share/v/1DLp4BWZfj)
+- [BKK.js 24 Summer 2026 Live Stream](https://www.facebook.com/share/v/1DLp4BWZfj)
 
 ---
 
