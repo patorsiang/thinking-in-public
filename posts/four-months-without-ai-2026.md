@@ -1,3 +1,12 @@
+---
+title: "What I Learned from 4 Months Without AI Coding Tools (and 2 Months with Them)"
+date: 2026-08-01
+summary: "Probation without any agentic AI, then Claude and Antigravity — and what actually changed."
+tags: [ai, career, learning]
+maturity: published
+lang: [en, th]
+---
+
 # What I Learned from 4 Months Without AI Coding Tools (and 2 Months with Them)
 
 > Probation without any agentic AI, then Claude and Antigravity — and what actually changed

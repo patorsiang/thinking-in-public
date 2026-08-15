@@ -1,3 +1,12 @@
+---
+title: "Insights from BKK.js Summer 2026"
+date: 2026-06-14
+summary: "Web performance, WebAssembly, WebMCP, AI-assisted engineering, and event reflections."
+tags: [events, web-performance, ai]
+maturity: published
+lang: [en, th]
+---
+
 # Insights from BKK.js Summer 2026
 
 ![BKK.js Summer 2026](https://creatorsgarten.org/cdn-cgi/image/width=360,height=360,fit=crop,format=webp,quality=85/https://usercontent.creatorsgarten.org/c/v1774442419/644c35a6802c02345887f156/image_jri94k.webp)

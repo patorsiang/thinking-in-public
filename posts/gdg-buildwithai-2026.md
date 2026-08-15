@@ -1,3 +1,12 @@
+---
+title: "Vibe Coding & Agentic AI: Key Takeaways from ChaiyoGCP & Build with AI Bangkok 2026"
+date: 2026-03-22
+summary: "AI-assisted development, agentic systems, GenUI, and event reflections."
+tags: [events, ai, genui]
+maturity: published
+lang: [en, th]
+---
+
 # Vibe Coding & Agentic AI: Key Takeaways from ChaiyoGCP & Build with AI Bangkok 2026
 
 > How AI is reshaping developers — from writing code to designing intelligent systems
