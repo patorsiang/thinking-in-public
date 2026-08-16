@@ -1,6 +1,6 @@
 # Insights from BKK.js Summer 2026
 
-![BKK.js Summer 2026](https://creatorsgarten.org/cdn-cgi/image/width=360,height=360,fit=crop,format=webp,quality=85/https://usercontent.creatorsgarten.org/c/v1774442419/644c35a6802c02345887f156/image_jri94k.webp)
+![BKK.js Summer 2026](https://p-u.popcdn.net/event_details/posters/000/139/651/large/a997f2de6097d60ead51f4319cadbeb3741a03a9.png?1773125360)
 
 **Original Content Reference:** [Facebook Live @ BKK.js](https://www.facebook.com/share/v/1DLp4BWZfj)
 
@@ -144,7 +144,7 @@ Watching BKK.js Summer 2026 made me realize that the boundary between "Web Devel
 
 ### Resources & Credits
 
-- [BKK.js 24 Summer 2026 Live Stream](www.facebook.com/share/v/1DLp4BWZfj)
+- [BKK.js 24 Summer 2026 Live Stream](https://www.facebook.com/share/v/1DLp4BWZfj)
 
 ---
 
