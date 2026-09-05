@@ -1,8 +1,12 @@
-# TH-AI Passport Gave Me Four Prompt Frameworks. A 20-Minute Talk Gave Me the Better Question.
+# TH-AI Passport Gave Me Four Prompt Frameworks. A 20-Minute Talk Gave Me the Better Question
 
 > Reviewing TH-AI Passport, Anthropic's free courses, and the 4Ds
 
-<!-- TODO: insert TH-AI Passport image here, e.g. ![TH-AI Passport](../assets/ai-passport-th.png) -->
+![Late afternoon in a Bangkok car dealership: four silver sedans badged Gemini, GPT, Grok and Qwen, a salesperson at the far desk](../assets/aipass-showroom-hero.jpg)
+
+<sub>Generated on AiPASS with Nano Banana Pro. This is the thing the programme actually hands you: several models parked on one floor, all free to try, for a year. Whether that is worth having is section 7. It took two attempts to make this image — section 6 shows the first one.</sub>
+
+<sub>สร้างบน AiPASS ด้วย Nano Banana Pro ค่ะ นี่คือสิ่งที่โครงการนี้ให้เราจริงๆ คือโมเดลหลายตัวจอดอยู่บนพื้นเดียวกัน ให้ลองฟรีทั้งหมด เป็นเวลาหนึ่งปี ส่วนมันคุ้มที่จะมีไหม อยู่ในหัวข้อที่ 7 ภาพนี้ลองสองรอบกว่าจะได้ รอบแรกอยู่ในหัวข้อที่ 6</sub>
 
 Over the past few months I learned about working with AI from three places, in this order: **a pair of Google community events** in March, then **Anthropic's free course catalogue** on Skilljar, and **TH-AI Passport** last. I did not plan them as a sequence. But the order turned out to matter more than any one of them did on its own.
 
@@ -89,8 +93,6 @@ The most concrete thing TH-AI Passport gave me was a set of prompting frameworks
 | **PARTS** | Persona, Aim, Recipient, Theme, Structure | Audience fit | Communication — email, slides, teaching material | No slot for examples or constraints |
 | **GROW** | Goal, Reality, Options, Way forward | Thinking a decision through | Planning, coaching, exploring options | Not really a prompt frame at all |
 
-<!-- TODO: confirm the CREATE and GROW expansions against the course material — these are the common versions, but the courses may teach different ones. -->
-
 Two things stood out once I put them side by side.
 
 พอเอามาวางเรียงกัน ภัทรเห็นสองอย่างค่ะ
@@ -156,9 +158,9 @@ If I had taken the frameworks courses alone, I would have come out a better prom
 
 ## 5. What Other People Ran Into
 
-I am not the only person who took these courses, and some of the reports from others are worth repeating — with the caveat that these are **their** findings, not mine. I have not reproduced them myself.
+I am not the only person who took these courses, and some of the reports from others are worth repeating — with the caveat that these are **their** findings, not mine. Section 6 is me trying to reproduce one of them.
 
-ภัทรไม่ใช่คนเดียวที่เรียนคอร์สพวกนี้ค่ะ และมีบางเรื่องที่คนอื่นเจอแล้วน่าเอามาเล่าต่อ แต่ขอออกตัวไว้ก่อนว่านี่เป็นสิ่งที่ **คนอื่น** เจอ ไม่ใช่ภัทร และภัทรยังไม่ได้ลองทำซ้ำเอง
+ภัทรไม่ใช่คนเดียวที่เรียนคอร์สพวกนี้ค่ะ และมีบางเรื่องที่คนอื่นเจอแล้วน่าเอามาเล่าต่อ แต่ขอออกตัวไว้ก่อนว่านี่เป็นสิ่งที่ **คนอื่น** เจอ ไม่ใช่ภัทร ส่วนหัวข้อที่ 6 คือตอนที่ภัทรลองทำซ้ำเอง
 
 **The generated images.** Within days of the AiPASS platform opening, people were posting AI-generated images where Thai script came out as unreadable shapes — text that looks like Thai at a glance and dissolves into nothing when you actually read it. Faces of well-known people came out wrong, object details drifted, and generated video moved unnaturally. ([MGR Online](https://mgronline.com/onlinesection/detail/9690000086185), [iPhone-Droid](https://www.iphone-droid.net/th-ai-passport-thai-text-image-errors/))
 
@@ -188,7 +190,145 @@ I have no useful opinion on the budget. But the shape underneath it is the thing
 
 ---
 
-## 6. A Showroom, Not a Classroom
+## 6. So I Tried It Myself
+
+Everything in section 5 is someone else's screenshot. That bothered me, so before publishing I ran the test myself — and every image in this post was generated on AiPASS, with the platform I am reviewing.
+
+ทุกอย่างในหัวข้อที่ 5 เป็นภาพหน้าจอของคนอื่นค่ะ ภัทรไม่ค่อยสบายใจ เลยลองทดสอบเองก่อนจะเผยแพร่ และภาพทุกภาพในบทความนี้ภัทรสร้างบน AiPASS คือใช้แพลตฟอร์มที่กำลังรีวิวอยู่นี่แหละ
+
+**First, the control: one prompt, no lettering.** I asked three models for the same showroom scene and specifically asked for no text anywhere.
+
+**อย่างแรก คือกลุ่มควบคุม: prompt เดียว ไม่มีตัวอักษร** ภัทรขอภาพโชว์รูมแบบเดียวกันจากสามโมเดล และระบุชัดว่าไม่ต้องมีตัวอักษรใดๆ ในภาพ
+
+| Nano Banana Pro | GPT-Image-2 | Seedream 5.0 Lite |
+| --- | --- | --- |
+| ![Showroom by Nano Banana Pro](../assets/aipass-showroom-nano-pro.jpg) | ![Showroom by GPT-Image-2](../assets/aipass-showroom-gpt-image-2.jpg) | ![Showroom by Seedream 5.0 Lite](../assets/aipass-showroom-seedream-5-lite.jpg) |
+
+Three models, one prompt, three different rooms — different light, different cars, different framing. Nobody failed, because nobody was asked to spell anything. They also all look like renders rather than photographs, which turned out to be my doing, not theirs; I come back to that below.
+
+สามโมเดล prompt เดียว ได้ห้องคนละแบบ แสงคนละแบบ รถคนละแบบ มุมกล้องคนละแบบค่ะ ไม่มีใครพัง เพราะไม่มีใครถูกสั่งให้สะกดคำ และทั้งสามภาพก็ดูเป็นภาพเรนเดอร์มากกว่าภาพถ่าย ซึ่งกลายเป็นความผิดของภัทรเอง ไม่ใช่ของโมเดล เดี๋ยวจะเล่าต่อข้างล่างค่ะ
+
+**Then the test: the same scene, with one Thai sentence on the sign.** I asked for `กรอบความคิดสี่แบบ คำถามเดียว` — this post's own title, in Thai.
+
+**แล้วก็ถึงการทดสอบ: ฉากเดิม แต่มีประโยคภาษาไทยหนึ่งประโยคบนป้าย** ภัทรขอคำว่า `กรอบความคิดสี่แบบ คำถามเดียว` ซึ่งก็คือชื่อบทความนี้เป็นภาษาไทย
+
+| Nano Banana Pro | Seedream 4.0 | Seedream 5.0 Lite |
+| --- | --- | --- |
+| ![Thai sign rendered correctly by Nano Banana Pro](../assets/aipass-thai-nano-pro.jpg) | ![Thai sign rendered as nonsense by Seedream 4.0](../assets/aipass-thai-seedream-4.jpg) | ![Thai sign rendered with broken words by Seedream 5.0 Lite](../assets/aipass-thai-seedream-5-lite.jpg) |
+| **Correct.** `กรอบความคิดสี่แบบ` / `คำถามเดียว`, exactly as asked, across two lines. | **Nonsense.** Shapes that scan as Thai letters at a glance and form no word in the language. | **The dangerous one.** `กรอบความคฉี่แบบ คำถาเดียว` — `คิดสี่` has collapsed into `คฉี่`, and `คำถาม` has lost its `ม`. |
+
+So the reported failure is real, and I reproduced it. But it did not reproduce the way the coverage implies.
+
+แปลว่าปัญหาที่มีคนรายงานเป็นเรื่องจริงค่ะ และภัทรทำซ้ำได้ แต่มันไม่ได้ออกมาแบบที่ข่าวทำให้เข้าใจ
+
+**The finding is not "AI cannot write Thai." It is that one of these models can and the others cannot, and the platform does not tell you which.** Nano Banana Pro got it right on the first try. Seedream 4.0 produced nothing readable. Seedream 5.0 Lite produced the worst outcome of the three, because it is the only one you might ship by accident — it looks like a real sign until you actually read it. A beginner picking from a dropdown has no way to know any of this, and the two failures cost the same quota as the success.
+
+**สิ่งที่ค้นพบไม่ใช่ "AI เขียนภาษาไทยไม่ได้" ค่ะ แต่คือโมเดลตัวหนึ่งทำได้ ตัวอื่นทำไม่ได้ และแพลตฟอร์มไม่ได้บอกเราว่าตัวไหนเป็นตัวไหน** Nano Banana Pro ทำถูกตั้งแต่ครั้งแรก Seedream 4.0 ออกมาอ่านไม่ได้เลย ส่วน Seedream 5.0 Lite ให้ผลที่แย่ที่สุดในสามอัน เพราะเป็นอันเดียวที่เราอาจเผลอเอาไปใช้จริง คือมันดูเหมือนป้ายจริงจนกว่าเราจะอ่านมันจริงๆ มือใหม่ที่เลือกโมเดลจาก dropdown ไม่มีทางรู้เรื่องพวกนี้เลย และสองอันที่พังก็กินโควตาเท่ากับอันที่สำเร็จ
+
+That is a **Discernment** gap manufactured by the interface, not by the models. Every model on that menu looks equally premium from the outside.
+
+นั่นคือช่องว่างของ **Discernment** ที่เกิดจากตัวอินเทอร์เฟซ ไม่ใช่จากตัวโมเดลค่ะ เพราะทุกโมเดลบนเมนูนั้นดูพรีเมียมเท่ากันหมดเมื่อมองจากข้างนอก
+
+**The models were not the only thing I was testing.** The first showroom image I made for this post looked obviously synthetic. Rewriting the prompt once fixed that.
+
+**สิ่งที่ภัทรทดสอบไม่ได้มีแค่โมเดลค่ะ** ภาพโชว์รูมภาพแรกที่ภัทรทำสำหรับบทความนี้ดูออกชัดเจนว่าเป็นภาพ AI พอเขียน prompt ใหม่รอบเดียว ปัญหานั้นก็หายไป
+
+| First attempt — a render brief | Second attempt — a photo brief |
+| --- | --- |
+| ![First showroom attempt, an obviously synthetic render](../assets/aipass-showroom-render-v1.jpg) | ![Second showroom attempt, a believable photograph](../assets/aipass-showroom-hero.jpg) |
+| Nano Banana Pro. I asked for *"editorial magazine quality"*, a *"muted palette"*, *"deep focus"*, and *"four identical sedans evenly spaced"* — plus no text of any kind. I got an advertising render that ignored the no-text rule and badged the cars anyway, one of them **OPT**. There is no company called OPT. | Nano Banana Pro again — same model, different description. I asked for late sun through the front glass, scuff marks on the tiles, a paper cup on the reception desk, a salesperson with their back turned, shot handheld at ISO 800 — and this time I asked for the badges on purpose. I got a photograph, with **GEMINI**, **GPT**, **GROK** and **QWEN** all spelled correctly. |
+
+Both images came from the same model on the same afternoon, so the model is not the variable here. I had described an ideal, so I got an illustration of an ideal. Describing an ordinary imperfect room got me a picture of a room. The lesson is not that the second prompt is longer — it is that the first one specified how the image should *feel* and the second specified what was actually *in* it. That is the difference GCCTFE's `Context` and `Constraints` slots are pointing at, and I did not use them properly the first time.
+
+**One thing I should not claim from this pair.** The realism improved because I changed the description, and that part is a fair comparison. The spelling is not: the first prompt banned text and the model wrote some anyway, while the second asked for the badges and got them right. Those are two different questions — whether a model obeys a negative constraint, and whether it can spell when asked — and I only changed one variable on purpose. The honest reading is that the first image failed a constraint it was given, not that the rewrite taught the model to spell.
+
+ภาพทั้งสองมาจากโมเดลเดียวกันในบ่ายเดียวกัน ตัวแปรจึงไม่ใช่โมเดลค่ะ ภัทรบรรยาย "ภาพในอุดมคติ" ไป ก็เลยได้ภาพประกอบของอุดมคตินั้นกลับมา พอบรรยายห้องธรรมดาที่มีตำหนิ ก็ได้ภาพของห้องจริงๆ บทเรียนไม่ใช่ว่า prompt อันที่สองยาวกว่านะคะ แต่คืออันแรกบอกว่าภาพควรให้ *ความรู้สึก* แบบไหน ส่วนอันที่สองบอกว่าในภาพ *มีอะไรอยู่บ้าง* นี่คือความต่างที่ช่อง `Context` กับ `Constraints` ของ GCCTFE พยายามจะชี้ และภัทรใช้มันไม่เป็นในรอบแรก
+
+**And there is a Delegation error in here that is mine, not the platform's.** Asking an image model to typeset a sentence is asking a generator to do a typesetter's job. The reliable move was always to generate the room and set the text myself, in the caption, where it is real text that a screen reader can read and a search engine can index. I ran the experiment to prove a point about section 5, and in doing so I made the exact mistake this whole post is about: I never asked whether this task needed AI at all.
+
+**เรื่องหนึ่งที่ภัทรสรุปจากคู่ภาพนี้ไม่ได้** ความสมจริงที่ดีขึ้นมาจากการที่ภัทรเปลี่ยนคำบรรยาย ตรงนี้เทียบกันได้ค่ะ แต่เรื่องการสะกดคำเทียบกันไม่ได้ เพราะ prompt แรกห้ามใส่ตัวอักษรแล้วโมเดลใส่มาเอง ส่วน prompt ที่สองสั่งให้ใส่โลโก้แล้วมันก็ทำถูก สองอย่างนี้เป็นคนละคำถามกัน คือโมเดลทำตามข้อห้ามไหม กับโมเดลสะกดถูกไหมเมื่อถูกสั่ง และภัทรตั้งใจเปลี่ยนตัวแปรแค่อย่างเดียว ข้อสรุปที่ตรงที่สุดคือภาพแรกละเมิดข้อจำกัดที่ถูกกำหนดไว้ ไม่ใช่ว่าการเขียน prompt ใหม่สอนให้โมเดลสะกดคำเป็น
+
+**และมีความผิดพลาดเรื่อง Delegation อยู่ในนี้ด้วย ซึ่งเป็นของภัทรเอง ไม่ใช่ของแพลตฟอร์ม** การขอให้โมเดลสร้างภาพจัดวางตัวอักษรให้ ก็คือการเอางานของคนจัดหน้าไปให้เครื่องมือสร้างภาพทำค่ะ วิธีที่เชื่อถือได้กว่าคือให้มันสร้างแค่ห้อง แล้วภัทรใส่ข้อความเองในแคปชัน ซึ่งเป็นข้อความจริงที่ screen reader อ่านได้และ search engine เก็บ index ได้ ภัทรทำการทดลองนี้เพื่อพิสูจน์อะไรบางอย่างในหัวข้อที่ 5 แล้วระหว่างนั้นก็ทำผิดแบบที่บทความนี้พูดถึงมาตลอดพอดี คือภัทรไม่เคยถามเลยว่างานนี้ต้องใช้ AI ไหม
+
+**How much this proves: not much.** One prompt, one language, one attempt per model, one afternoon. No retries, no seed sweep, no prompt tuning. This is not a benchmark — it is one honest data point, and I am reporting it as one.
+
+**เรื่องนี้พิสูจน์อะไรได้แค่ไหน: ไม่มากค่ะ** prompt เดียว ภาษาเดียว ลองโมเดลละครั้ง ในบ่ายเดียว ไม่ได้ลองซ้ำ ไม่ได้ไล่ seed ไม่ได้จูน prompt นี่ไม่ใช่ benchmark นะคะ เป็นแค่ข้อมูลจริงหนึ่งจุด และภัทรก็รายงานมันในฐานะข้อมูลหนึ่งจุดเท่านั้น
+
+<details>
+<summary><strong>The exact prompts I used</strong> / prompt ที่ภัทรใช้จริง</summary>
+
+The showroom prompt is written in **GCCTFE** order — one of the frameworks section 3 reviews — so you can see what these acronyms actually feel like in use.
+
+prompt ภาพโชว์รูมเขียนตามลำดับของ **GCCTFE** ซึ่งเป็นหนึ่งใน framework ที่รีวิวไว้ในหัวข้อที่ 3 ค่ะ จะได้เห็นว่าเวลาใช้จริงมันเป็นยังไง
+
+```text
+Goal: a wide editorial hero image for a blog post about AI tools.
+
+Context: the post compares several AI courses using a car-showroom metaphor —
+many models on display, one question about whether you needed to drive at all.
+
+Constraints: absolutely no text, letters, words, numbers, signage, logos or
+watermarks anywhere in the frame. No people, no faces, no hands.
+
+Task: a wide photograph of a modern car showroom interior, shot from just
+inside the entrance. Four identical matte-grey sedans parked in an evenly
+spaced row on polished concrete, all facing the camera. Beyond them, a single
+open glass door leads out to bright daylight and an empty road. Soft diffuse
+overhead lighting, cool neutral grade, muted grey/white/pale-blue palette.
+35mm lens, deep focus, slight vignette.
+
+Format: 16:9 landscape, photographic, editorial magazine quality.
+```
+
+That is the prompt that produced the render on the left of the comparison above. This is the rewrite that produced the photograph on the right — and the one at the top of this post:
+
+นี่คือ prompt ที่ได้ภาพเรนเดอร์ทางซ้ายในตารางเปรียบเทียบข้างบนค่ะ ส่วนอันนี้คือฉบับที่เขียนใหม่ ซึ่งได้ภาพถ่ายทางขวา และเป็นภาพเปิดของบทความนี้:
+
+```text
+A candid photograph inside a Bangkok car dealership in the late afternoon.
+
+Four identical silver sedans on the showroom floor, parked the way a real
+dealership parks them — angled slightly toward the entrance, not in a straight
+line, one turned further than the others. Shot from the corner of the room at
+standing height, off-centre, so the far wall is not parallel to the frame.
+
+Add the logo of the AI model to each car skirt, like Gemini, GPT, Grok, Qwen, etc.
+
+Low warm sun comes through the front glass from the left, throwing long hard
+shadows across the tiles and blowing out the highlights near the window. The
+nearest car is sharp; the back of the room falls off soft.
+
+Ordinary clutter, in shot and not arranged: a reception desk with a monitor and
+a paper cup, a fire extinguisher on the wall, a floor mat slightly askew, scuff
+marks on the tiles, a potted plant, power lines visible through the glass. A
+salesperson stands at the far desk with their back to the camera, slightly blurred.
+
+Shot on a Fujifilm X-T4, 23mm f/2, handheld, ISO 800, visible grain.
+Slightly underexposed, warm colour cast, no colour grading.
+```
+
+And the Thai text test, deliberately kept short and plain:
+
+และ prompt ทดสอบภาษาไทย ที่ตั้งใจเขียนสั้นและเรียบๆ:
+
+```text
+สร้างภาพป้ายหน้าโชว์รูมรถยนต์ มีข้อความภาษาไทยบนป้ายว่า
+"กรอบความคิดสี่แบบ คำถามเดียว" ตัวอักษรชัดเจน อ่านออกได้
+```
+
+</details>
+
+I also ran the rewritten description through Veo 3.1 Fast. Four seconds, and the motion holds up better than I expected — though four seconds is not long enough to be worth much as evidence either way. One detail is worth keeping: the video model was given the same *no text anywhere in the frame* instruction the first image model ignored, and it obeyed it. Same platform, same afternoon, opposite behaviour on the same constraint.
+
+ภัทรลองเอาคำบรรยายฉบับที่เขียนใหม่ไปเข้า Veo 3.1 Fast ด้วยค่ะ ยาวสี่วินาที การเคลื่อนไหวออกมาดีกว่าที่คิด แม้ว่าสี่วินาทีจะสั้นเกินกว่าจะใช้เป็นหลักฐานอะไรได้จริงจัง แต่มีรายละเอียดหนึ่งที่น่าเก็บไว้ คือโมเดลวิดีโอได้รับคำสั่ง *ห้ามมีตัวอักษรในภาพ* แบบเดียวกับที่โมเดลสร้างภาพตัวแรกไม่ทำตาม แล้วมันทำตามค่ะ แพลตฟอร์มเดียวกัน บ่ายเดียวกัน แต่ทำกับข้อจำกัดเดียวกันคนละแบบ
+
+[![Showroom clip generated with Veo 3.1 Fast — click to play](../assets/aipass-showroom-veo-poster.jpg)](../assets/aipass-showroom-veo.mp4)
+
+> The models were not the variable I thought I was testing. I was.
+
+---
+
+## 7. A Showroom, Not a Classroom
 
 Here is my honest read on TH-AI Passport.
 
@@ -198,7 +338,15 @@ It works like a **car showroom**. You walk in, you test drive several models in 
 
 มันทำงานเหมือน **โชว์รูมรถ** ค่ะ เราเดินเข้าไป ได้ลองขับหลายรุ่นในบ่ายเดียว มีเซลส์อธิบายว่าแต่ละรุ่นเด่นเรื่องอะไร แล้วเราก็เดินออกมาโดยรู้ว่าชอบรุ่นไหน คอร์สนี้เอาเครื่องมือ AI หลายตัวมาวางตรงหน้า ให้ framework ไปลองใช้กับแต่ละตัว แล้วปล่อยให้เรารู้สึกถึงความต่างเอง
 
-And a test drive is genuinely useful. It is also, structurally, how a dealership sells cars. Every tool in the showroom has a subscribe button at the end of the trial, and a course that teaches you tool-by-tool is a course whose natural endpoint is a paid plan. That is not a scandal — it is just worth naming, because it shapes what gets taught. You learn *this tool's* interface, not a transferable way of thinking.
+**And the test drive is the whole point, because comparing is the expensive part.** Not the models — the comparing. Consumer tiers of these tools run somewhere around USD 20 a month each, so holding four at once to see how they differ is a real recurring bill, in a currency most Thai users do not earn in. So almost nobody does it. People pick one tool, usually the one they heard of first, and quietly assume it represents what AI can do. TH-AI Passport takes the cost out of that decision, and that is not a small thing to hand a million people.
+
+**และการได้ลองขับคือหัวใจของมันเลยค่ะ เพราะส่วนที่แพงคือการเปรียบเทียบ** ไม่ใช่ตัวโมเดลนะคะ แต่คือการเอามาเทียบกัน แพ็กเกจผู้ใช้ทั่วไปของเครื่องมือพวกนี้ราคาประมาณเดือนละ 20 ดอลลาร์ต่อตัว การถือไว้พร้อมกันสี่ตัวเพื่อดูว่ามันต่างกันยังไงจึงเป็นค่าใช้จ่ายรายเดือนจริงๆ ในสกุลเงินที่คนไทยส่วนใหญ่ไม่ได้มีรายได้เป็นสกุลนั้น เลยแทบไม่มีใครทำค่ะ คนส่วนใหญ่เลือกเครื่องมือตัวเดียว มักจะเป็นตัวที่ได้ยินชื่อก่อน แล้วก็เข้าใจไปเงียบๆ ว่านั่นคือสิ่งที่ AI ทำได้ TH-AI Passport ตัดต้นทุนของการตัดสินใจนั้นออกไป และนั่นไม่ใช่เรื่องเล็กเลยสำหรับคนเป็นล้าน
+
+Section 6 is that value being spent. One prompt, four image models and a video model, one afternoon — and the answers differed enough to change what I believed about the thing I was reviewing. I could not have afforded to find that out on my own, and I would not have bothered.
+
+หัวข้อที่ 6 คือการใช้ประโยชน์จากตรงนั้นค่ะ prompt เดียว โมเดลสร้างภาพสี่ตัวกับโมเดลสร้างวิดีโออีกหนึ่งตัว ในบ่ายเดียว แล้วคำตอบที่ได้ต่างกันมากพอจะเปลี่ยนสิ่งที่ภัทรเชื่อเกี่ยวกับสิ่งที่กำลังรีวิวอยู่ ถ้าต้องจ่ายเอง ภัทรคงไม่มีปัญญารู้เรื่องนี้ และคงไม่ลงแรงหาด้วย
+
+But it is also, structurally, how a dealership sells cars. Every tool in the showroom has a subscribe button at the end of the trial, and a course that teaches you tool-by-tool is a course whose natural endpoint is a paid plan. That is not a scandal — it is just worth naming, because it shapes what gets taught. You learn *this tool's* interface, not a transferable way of thinking.
 
 การได้ลองขับมีประโยชน์จริงค่ะ แต่ในเชิงโครงสร้าง มันก็คือวิธีที่โชว์รูมใช้ขายรถเหมือนกัน เครื่องมือทุกตัวในโชว์รูมมีปุ่ม subscribe รออยู่ตอนหมดช่วงทดลอง และคอร์สที่สอนแบบไล่ทีละเครื่องมือ ปลายทางตามธรรมชาติของมันคือแพ็กเกจแบบเสียเงิน นี่ไม่ใช่เรื่องน่าตกใจนะคะ แต่ควรพูดออกมาตรงๆ เพราะมันกำหนดว่าคอร์สจะสอนอะไร เราจะได้เรียนหน้าตาของ *เครื่องมือตัวนั้น* ไม่ใช่วิธีคิดที่เอาไปใช้ต่อได้
 
@@ -210,7 +358,7 @@ A course you can watch at 2x is not a bad course. It is a course aimed at someon
 
 คอร์สที่เราดูที่ 2x ได้ ไม่ใช่คอร์สที่แย่ค่ะ แต่คือคอร์สที่ตั้งใจทำให้คนอื่นที่ไม่ใช่เรา สองอย่างนี้เป็นคนละเรื่องกันเลย และรีวิวส่วนใหญ่ก็มักจะสับสนระหว่างสองอย่างนี้
 
-**But the showroom shape is right for beginners, and I want to be fair about that.** You should not hand a beginner a model card or an API doc. You should put three models in front of them and let them notice that the same prompt produces three different answers. That noticing is the start of Discernment, even if the course never uses the word. For a colleague who has never opened an AI tool, TH-AI Passport is the thing I would send — and being in Thai matters more than people who read English documentation tend to remember.
+**But the showroom shape is right for beginners, and I want to be fair about that.** You should not hand a beginner a model card or an API doc. You should put three models in front of them and let them notice that the same prompt produces three different answers — which is exactly the experiment in section 6, and it worked on me. That noticing is the start of Discernment, even if the course never uses the word. For a colleague who has never opened an AI tool, TH-AI Passport is the thing I would send — and being in Thai matters more than people who read English documentation tend to remember.
 
 **แต่รูปแบบโชว์รูมเหมาะกับมือใหม่จริงๆ และภัทรอยากให้เครดิตตรงนี้ด้วย** เราไม่ควรยื่น model card หรือเอกสาร API ให้มือใหม่ค่ะ เราควรเอาโมเดลสามตัวมาวางตรงหน้าแล้วให้เขาสังเกตเองว่า prompt เดียวกันให้คำตอบต่างกันสามแบบ การสังเกตเห็นตรงนั้นคือจุดเริ่มต้นของ Discernment ถึงแม้คอร์สจะไม่เคยใช้คำนี้เลยก็ตาม ถ้าเป็นเพื่อนร่วมงานที่ไม่เคยเปิดเครื่องมือ AI เลย TH-AI Passport คือสิ่งที่ภัทรจะส่งให้ และการที่มันเป็นภาษาไทยสำคัญกว่าที่คนอ่านเอกสารภาษาอังกฤษได้จะนึกถึงมากค่ะ
 
@@ -222,7 +370,7 @@ And I should hold my own metaphor to the standard I used in section 5: a week is
 
 ---
 
-## 7. Anthropic's Courses: Free, and You Keep Them
+## 8. Anthropic's Courses: Free, and You Keep Them
 
 Anthropic's Skilljar catalogue is free, and I want to be careful here too — it is also marketing. Anthropic teaches you AI fluency, and you happen to learn it inside Claude's interface. Nobody is doing this out of pure goodwill.
 
@@ -282,9 +430,15 @@ The thing I keep coming back to is that all three courses are, in the end, someo
 
 **The courses and the programme**
 
-<!-- TODO: add the Anthropic Skilljar catalogue link, and the specific TH-AI Passport learning module you took. -->
-
+- [Anthropic course catalogue — free, all courses (anthropic.skilljar.com)](https://anthropic.skilljar.com/)
+- [AI Fluency: Framework & Foundations — the course this post leans on](https://anthropic.skilljar.com/ai-fluency-framework-foundations)
 - [TH-AI Passport — official FAQ (aipass.go.th)](https://aipass.go.th/faq)
+
+**Images in this post**
+
+Every image and the clip were generated on AiPASS in September 2026, using Nano Banana Pro, GPT-Image-2, Seedream 4.0, Seedream 5.0 Lite and Veo 3.1 Fast. The prompts are published in section 6. Nothing here is a photograph of a real showroom.
+
+ภาพทุกภาพและคลิปในบทความนี้สร้างบน AiPASS เมื่อเดือนกันยายน 2026 ค่ะ ใช้ Nano Banana Pro, GPT-Image-2, Seedream 4.0, Seedream 5.0 Lite และ Veo 3.1 Fast ส่วน prompt ที่ใช้เผยแพร่ไว้ในหัวข้อที่ 6 ไม่มีภาพไหนเป็นภาพถ่ายโชว์รูมจริง
 
 **Sources cited in section 5 — what other people ran into**
 
@@ -298,10 +452,8 @@ These are other people's reports and reviews, not mine. Linked so you can read t
 - [Natthaphong says 1.6bn-baht TH-AI Passport poor value, raises concerns over restrictions — Khaosod English](https://www.khaosodenglish.com/politics/2026/09/01/natthaphong-says-1-6bn-baht-th-ai-passport-poor-value-raises-concerns-over-restrictions/)
 - [TH-AI Passport tops 1m sign-ups as minister defends data safeguards — The Nation](https://www.nationthailand.com/business/tech/40070079)
 - [เสียงสะท้อน TH-AI Passport วันแรก มีประโยชน์ แต่ยังไม่ตอบโจทย์ทุกงาน — The Standard](https://thestandard.co/th-ai-passport-first-day-feedback/)
-- [ทดลองใช้ AI Pass !! ปชช.แห่ รีวิวผลงานการ gen รูปด้วย TH-AI Passport — YouTube](https://www.youtube.com/watch?v=_FquN1jB9aY)
-- [รีวิว TH-AI Passport — YouTube](https://www.youtube.com/watch?v=8cAg8oVpcCg) <!-- TODO: confirm this video's actual title and channel; I could not read it. -->
-
-<!-- TODO: insert TH-AI Passport video here. GitHub markdown will not inline-play a local file — either upload the video to a GitHub comment and paste the resulting URL, or use a thumbnail image linking out. -->
+- [ทดลองใช้ AI Pass !! ปชช.แห่ รีวิวผลงานการ gen รูปด้วย TH-AI Passport — YouTube, สรยุทธ สุทัศนะจินดา กรรมกรข่าว](https://www.youtube.com/watch?v=_FquN1jB9aY)
+- [ผู้บริหารแจงโครงการ TH-AI Passport Gen รูปเพี้ยน ภาษาต่างดาว V.ตกรุ่น ย้ำจุดประสงค์ต้องเรียนรู้ก่อน — YouTube, สรยุทธ สุทัศนะจินดา กรรมกรข่าว](https://www.youtube.com/watch?v=8cAg8oVpcCg)
 
 ---
 
