@@ -68,6 +68,7 @@ Suggested paths:
 | [Vibe Coding & Agentic AI: Key Takeaways from ChaiyoGCP & Build with AI Bangkok 2026](posts/gdg-buildwithai-2026.md) | AI-assisted development, agentic systems, GenUI, and event reflections |
 | [Insights from BKK.js Summer 2026](posts/bkkjs-summer-2026.md) | Web performance, WebAssembly, WebMCP, AI-assisted engineering, and event reflections |
 | [What I Learned From 4 Months Without AI Coding Tools (and 2 Months With Them)](posts/four-months-without-ai-2026.md) | Working on probation without agentic AI, adopting Claude and Antigravity, code review habits, and context management |
+| [TH-AI Passport Gave Me Four Prompt Frameworks. A 20-Minute Talk Gave Me the Better Question.](posts/four-frameworks-one-question-2026.md) | Reviewing TH-AI Passport, Anthropic's free courses and the 4Ds; prompt frameworks vs. delegation; a first-hand test of Thai text rendering |
 
 ## Notes Index
 
@@ -75,6 +76,9 @@ Suggested paths:
 | --- | --- |
 | [notes/03-2026](notes/03-2026) | Bangkok tech event notes from March 2026 |
 | [notes/05-2026](notes/05-2026) | Claude, Claude Code, Claude Cowork, and CS50 Scratch learning notes |
+| [notes/06-2026](notes/06-2026) | Claude platform, MCP, subagents, agent skills, and AI capabilities and limitations |
+| [notes/07-2026](notes/07-2026) | Model Context Protocol: advanced topics |
+| [notes/08-2026](notes/08-2026) | AI Fluency for educators and for students |
 
 ## Writing Principles
 
