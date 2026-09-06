@@ -1,3 +1,12 @@
+---
+title: "TH-AI Passport Gave Me Four Prompt Frameworks. A 20-Minute Talk Gave Me the Better Question"
+date: 2026-09-06
+summary: "Reviewing TH-AI Passport, Anthropic's free courses and the 4Ds; prompt frameworks vs. delegation; a first-hand test of Thai text rendering."
+tags: [ai, prompt-engineering, ai-literacy, events]
+maturity: published
+lang: [en, th]
+---
+
 # TH-AI Passport Gave Me Four Prompt Frameworks. A 20-Minute Talk Gave Me the Better Question
 
 > รีวิว TH-AI Passport, คอร์สฟรีของ Anthropic และ 4Ds — จากคนที่บังเอิญเรียนสามแหล่งเรียงกันโดยไม่ได้ตั้งใจ
