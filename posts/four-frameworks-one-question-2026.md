@@ -5,6 +5,7 @@ summary: "Reviewing TH-AI Passport, Anthropic's free courses and the 4Ds; prompt
 tags: [ai, prompt-engineering, ai-literacy, events]
 maturity: published
 lang: [en, th]
+elsewhere: [https://medium.com/@napatcholthaipanich_6231/th-ai-passport-gave-me-four-prompt-frameworks-a-20-minute-talk-gave-me-the-better-question-0d2714578e21]
 ---
 
 # TH-AI Passport Gave Me Four Prompt Frameworks. A 20-Minute Talk Gave Me the Better Question

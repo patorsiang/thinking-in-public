@@ -5,6 +5,7 @@ summary: "AI-assisted development, agentic systems, GenUI, and event reflections
 tags: [events, ai, genui]
 maturity: published
 lang: [en, th]
+elsewhere: [https://medium.com/@napatcholthaipanich_6231/vibe-coding-agentic-ai-key-takeaways-from-chaiyogcp-build-with-ai-bangkok-2026-2d8397b79e09]
 ---
 
 # Vibe Coding & Agentic AI: Key Takeaways from ChaiyoGCP & Build with AI Bangkok 2026

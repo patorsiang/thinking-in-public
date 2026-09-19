@@ -5,6 +5,7 @@ summary: "Web performance, WebAssembly, WebMCP, AI-assisted engineering, and eve
 tags: [events, web-performance, ai]
 maturity: published
 lang: [en, th]
+elsewhere: [https://medium.com/@napatcholthaipanich_6231/insights-from-bkk-js-summer-2026-3da45118d868]
 ---
 
 # Insights from BKK.js Summer 2026
