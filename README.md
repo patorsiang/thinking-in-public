@@ -70,6 +70,19 @@ Suggested paths:
 | [What I Learned From 4 Months Without AI Coding Tools (and 2 Months With Them)](posts/four-months-without-ai-2026.md) | Working on probation without agentic AI, adopting Claude and Antigravity, code review habits, and context management |
 | [TH-AI Passport Gave Me Four Prompt Frameworks. A 20-Minute Talk Gave Me the Better Question.](posts/four-frameworks-one-question-2026.md) | Reviewing TH-AI Passport, Anthropic's free courses and the 4Ds; prompt frameworks vs. delegation; a first-hand test of Thai text rendering |
 
+## Archive (originally published on Medium)
+
+These predate this repo. They are kept here as short pointers so the archive is
+complete; the Medium version stays the canonical one, and each file records that
+in its `canonical` front matter.
+
+| Post | Focus | Original |
+| --- | --- | --- |
+| [สรุปงาน Sec-Girl #6](posts/sec-girl-6-2025.md) | AI in Cybersecurity — AI governance and a hands-on workshop | [Medium](https://medium.com/@napatcholthaipanich_6231/%E0%B8%AA%E0%B8%A3%E0%B8%B8%E0%B8%9B%E0%B8%87%E0%B8%B2%E0%B8%99-sec-girl-6-327174c79b59) |
+| [Overall of CSS Meetup 16.08.2023](posts/css-meetup-2023.md) | `aspect-ratio` against layout shift, `content-visibility` for render performance | [Medium](https://medium.com/@napatcholthaipanich_6231/overall-of-css-meetup-16-08-2023-1289d8b615f2) |
+| [Overall of React Meetup 21.06.2023](posts/react-meetup-2023.md) | Redux-Saga for side effects and testability, headless components, Astro, Next.js | [Medium](https://medium.com/@napatcholthaipanich_6231/overall-of-react-meetup-21-06-2023-70530e4898d0) |
+| [My First Book Summary — Design System (2023.05)](posts/design-system-book-summary-2023.md) | Design Systems Handbook, and moving from using a component library to building one | [Medium](https://medium.com/@napatcholthaipanich_6231/my-first-book-summary-design-system-2023-05-828e123f6ed) |
+
 ## Notes Index
 
 | Folder | Focus |

@@ -5,6 +5,7 @@ summary: "Probation without any agentic AI, then Claude and Antigravity — and 
 tags: [ai, career, learning]
 maturity: published
 lang: [en, th]
+elsewhere: [https://medium.com/@napatcholthaipanich_6231/what-i-learned-from-4-months-without-ai-coding-tools-and-2-months-with-them-a1f656f0535a]
 ---
 
 # What I Learned from 4 Months Without AI Coding Tools (and 2 Months with Them)
