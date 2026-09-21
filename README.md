@@ -69,6 +69,7 @@ Suggested paths:
 | [Insights from BKK.js Summer 2026](posts/bkkjs-summer-2026.md) | Web performance, WebAssembly, WebMCP, AI-assisted engineering, and event reflections |
 | [What I Learned From 4 Months Without AI Coding Tools (and 2 Months With Them)](posts/four-months-without-ai-2026.md) | Working on probation without agentic AI, adopting Claude and Antigravity, code review habits, and context management |
 | [TH-AI Passport Gave Me Four Prompt Frameworks. A 20-Minute Talk Gave Me the Better Question.](posts/four-frameworks-one-question-2026.md) | Reviewing TH-AI Passport, Anthropic's free courses and the 4Ds; prompt frameworks vs. delegation; a first-hand test of Thai text rendering |
+| [The Two Ways a Gate Lies](posts/the-two-ways-a-gate-lies-2026.md) | Building a security-first delivery flow, catching two tools reporting false success, and shipping the same failure myself |
 
 ## Archive (originally published on Medium)
 
