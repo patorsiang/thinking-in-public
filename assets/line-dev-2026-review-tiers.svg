@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" role="img" aria-label="Three steps rising left to right. Tier 0, about 5 minutes: docs, tests or behaviour-preserving refactors with green CI, read the intent only. Tier 1, about 20 minutes: a normal feature inside one module, one reviewer. Tier 2, about 30 minutes plus staged rollout: contracts, auth, migrations, payments, prod config, the system owner reviews in detail. An arrow underneath shows the risk of the change increasing.">
+<defs>
+<marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#6B6A63"/></marker>
+</defs>
+<rect width="1200" height="460" rx="24" fill="#F6F4EE"/>
+<text x="40" y="60" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#14181F">Review by risk tier</text>
+<text x="40" y="92" font-family="system-ui, sans-serif" font-size="20" fill="#4F5864">From a LINE Developers Thailand summary of “The Bottleneck Moved”, redrawn by me.</text>
+<g font-family="system-ui, sans-serif" text-anchor="middle">
+<rect x="60" y="250" width="340" height="110" rx="14" fill="#E7E3D6" stroke="#B9B3A0" stroke-width="2"/>
+<text x="230" y="284" font-size="24" font-weight="700" fill="#14181F">Tier 0 · about 5 min</text>
+<text x="230" y="316" font-size="17" fill="#14181F">Docs, tests, safe refactor, CI green</text>
+<text x="230" y="342" font-size="20" fill="#14181F">Read the intent only</text>
+<rect x="430" y="190" width="340" height="170" rx="14" fill="#0F7B6C" fill-opacity="0.8"/>
+<text x="600" y="228" font-size="24" font-weight="700" fill="#FFFFFF">Tier 1 · about 20 min</text>
+<text x="600" y="264" font-size="20" fill="#FFFFFF">Normal feature in one module</text>
+<text x="600" y="292" font-size="20" fill="#FFFFFF">One reviewer</text>
+<rect x="800" y="130" width="340" height="230" rx="14" fill="#0F7B6C"/>
+<text x="970" y="168" font-size="24" font-weight="700" fill="#FFFFFF">Tier 2 · about 30 min</text>
+<text x="970" y="204" font-size="17" fill="#FFFFFF">Contract, auth, migration,</text>
+<text x="970" y="232" font-size="17" fill="#FFFFFF">payment, prod config, flag removal</text>
+<text x="970" y="268" font-size="20" fill="#FFFFFF">System owner reviews in detail</text>
+<text x="970" y="296" font-size="20" fill="#FFFFFF">+ staged rollout</text>
+</g>
+<line x1="60" y1="408" x2="1140" y2="408" stroke="#6B6A63" stroke-width="3" marker-end="url(#b)"/>
+<text x="60" y="440" font-family="system-ui, sans-serif" font-size="20" fill="#4F5864">Risk of the change goes up</text>
+</svg>
