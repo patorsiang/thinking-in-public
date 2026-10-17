@@ -17,15 +17,14 @@ lang: [en, th]
 
 ![Two rows of boxes: before, write code is the widest step; with agents, review, handoffs and agreeing what done means are the widest](../assets/line-dev-2026-bottleneck-moved.svg)
 
-<sub>ภาพประกอบที่ภัทรวาดเองจากภาพรวมของทั้งวัน ไม่ใช่ข้อมูลที่วัดจริงค่ะ ความกว้างของกล่องแค่แทน "แรงที่ใช้"</sub>
+<sub>ภาพประกอบนี้สร้างด้วย Claude จากโน้ตภาพรวมของทั้งวัน ไม่ใช่ข้อมูลที่วัดจริงค่ะ ความกว้างของกล่องแค่แทน "แรงที่ใช้"</sub>
 
 ---
 
 ## 1. LINE API: What's Next
 
-ช่วง Tech Keynote และ *LINE API Next-Frontier with Live Demo* พูดถึงทิศทางของแพลตฟอร์มค่ะ ใจความที่ภัทรจดไว้เป็นภาษาอังกฤษคือ *"delivering the agent to the user is the key point"* — แอปเชื่อมกับ agent ส่วนฝั่ง agent → ผู้ใช้ โน้ตบอกว่า "may be more advanced"
+ช่วง Tech Keynote และ *LINE API Next-Frontier with Live Demo* พูดถึงทิศทางของแพลตฟอร์มค่ะ ประเด็นที่ภัทรจดไว้คือ **การส่ง agent ไปถึงผู้ใช้** เป็นหัวใจสำคัญ ฝั่งแอปเชื่อมกับ agent ได้อยู่แล้ว ส่วนฝั่ง agent ไปถึงผู้ใช้ ภัทรจดไว้ว่าอาจล้ำไปได้อีก
 
-- **LINE MCP** ภัทรจดไว้ว่าอยากหาโอกาสใช้ แต่ยังไม่ได้ศึกษาค่ะ
 - API ที่ชุมชนอายุ 9 ปีเรียกว่า "next frontier": **Mini Apps**, **Edit Event webhook** (ใช้ได้เฉพาะ group chat), **Rich Menu insight API** (รอมาประมาณ 2 ปี), **LIFF SDK** (ใช้ได้ทั้ง bot, web และ Mini Apps)
 - ใน LIFF ขอให้ผู้ใช้ "เพิ่มเพื่อน" ได้เลย แล้วกลับมาที่ chatbot โดยไม่ต้องให้ผู้ใช้เสียจังหวะไปกด add friend แยก — เป้าหมายคือให้ **journey ไม่สะดุด**
 - **In-app purchase** สำหรับ Mini Apps (เฉพาะแอปที่ verified แล้ว ยืนยันผ่านอีเมล)
@@ -36,7 +35,9 @@ lang: [en, th]
 
 *Building MINI Eats* โชว์สไลด์ MINI Eats Solution ที่แสดงฝั่ง LINE (MyCustomer CRM, Restaurant Home Page, OA Plus, Core Subscription) กับฝั่ง LINE MAN Wongnai (Mobile Ordering, Wongnai Merchant App, Wongnai POS CRM) แล้วเส้นประแบ่งสองบริษัทออกจากกัน
 
-สไลด์ซ้อนสามชั้นทับบนไดอะแกรมเดียวกัน: **Seamless Experience** (ชั้น Mini App/LIFF), **Collaborative Ownership** (ชั้น service — ขอบเขตชัด ความเชี่ยวชาญเสริมกัน พัฒนาร่วมกัน) และ **Leverage** (ชั้น platform/integration) บทเรียนง่าย ๆ คือ ถ้า journey เดียวต้องต่อสองผลิตภัณฑ์จากสองบริษัท *ผู้ใช้ต้องไม่รู้สึกถึงรอยต่อ* และ **ขอบเขตความเป็นเจ้าของต้องชัด** ก่อนจะไปถึงเรื่องเร็วขึ้น 10 เท่า (สไลด์ถัดมาคือ *10x Faster: Lean Process, Embrace AI, Collaborate*)
+สไลด์ซ้อนสามชั้นทับบนไดอะแกรมเดียวกัน: **Seamless Experience** (ชั้น Mini App/LIFF), **Collaborative Ownership** (ชั้น service — ขอบเขตชัด ความเชี่ยวชาญเสริมกัน พัฒนาร่วมกัน) และ **Leverage** (ชั้น platform/integration) บทเรียนง่าย ๆ คือ ถ้า journey เดียวต้องต่อสองผลิตภัณฑ์จากสองบริษัท *ผู้ใช้ต้องไม่รู้สึกถึงรอยต่อ* และ **ขอบเขตความเป็นเจ้าของต้องชัด**
+
+ภัทรเห็นว่าบทเรียนนี้เอาไปใช้ในงานที่ต้องทำร่วมกันระหว่างสองทีมในบริษัทเดียวกันได้เหมือนกัน ไม่ต้องเป็นสองบริษัทเท่านั้นค่ะ
 
 ![MINI Eats Solution slide: LINE and LINE MAN Wongnai components split by a dashed line, with Seamless Experience, Collaborative Ownership and Leverage layers](../assets/line-dev-2026-mini-eats-layers.jpg)
 
@@ -46,7 +47,7 @@ lang: [en, th]
 
 ## 3. LINE MAN Wongnai: From Implementation to Intent
 
-คุณ Virot Chiraphadhanakul (VP of AI, LINE MAN Wongnai ตามที่ LINE Developers Thailand ระบุในโพสต์สรุปเซสชัน) เล่าเรื่อง *Driving AI Transformation* ค่ะ ตัวเลขที่ภัทรจดไว้คือ: **"80% AI-assisted, not shipped 80% faster"** (โน้ตไม่ได้บอกว่า 80% แรกวัดจากอะไร) ซึ่งตรงกับเรื่องคอขวดข้างบนพอดี
+คุณ Virot Chiraphadhanakul (VP of AI, LINE MAN Wongnai ตามที่ LINE Developers Thailand ระบุในโพสต์สรุปเซสชัน) เล่าเรื่อง *Driving AI Transformation* ค่ะ ตัวเลขที่ภัทรจดไว้คือ: **"80% AI-assisted, not shipped 80% faster"** ซึ่งตรงกับเรื่องคอขวดข้างบนพอดี คือ AI ช่วยสร้างโค้ดได้มาก แต่ความเร็วที่ส่งงานจริงไม่ได้เพิ่มตามสัดส่วนเดียวกัน
 
 สไลด์ชุดที่ทำให้ภาพชัดคือสามคู่ "จาก → ไปสู่" แยกตามบทบาท:
 
@@ -56,7 +57,7 @@ lang: [en, th]
 | Delivery | **Discovery** | ลองหลาย implementation พร้อมกัน แล้วเก็บอันที่ใช้ได้จริง | เอา prototype ที่ใช้ได้ไปประชุม ไม่ใช่ pitch deck | ทำ mockup ด้วย AI เร็ว ๆ ให้ลูกค้าปรับ interface เอง |
 | Content | **Knowledge** | จด architecture decision และบทเรียนจาก incident ไม่ให้ agent ผิดซ้ำ | — | เปลี่ยน feedback จาก review เป็นหลักการที่ agent ทำตามได้ |
 
-ประโยคจากสไลด์ *Delivery to Discovery* ที่ภัทรจดไว้: **"when building is cheap, the risk is building the wrong thing"** — และในโน้ตภัทรเขียนว่า "like parking 5 versions to deliver" ซึ่งก็คือช่อง "ลองหลาย implementation พร้อมกัน" ข้างบนนี่เองค่ะ
+สไลด์ *Delivery to Discovery* สรุปไว้ว่า **"when building is cheap, the risk is building the wrong thing"** คือเมื่อการสร้างถูกลง ความเสี่ยงอยู่ที่การสร้างผิดสิ่ง ภัทรนึกภาพเป็นการ *parking 5 versions* ไว้ก่อนเลือกส่งงาน ซึ่งตรงกับช่อง "ลองหลาย implementation พร้อมกัน" ในตารางข้างบนค่ะ
 
 อีกสองสไลด์ที่เกี่ยวกับ "ระบบรอบ ๆ" มากกว่าตัวโค้ด:
 
@@ -91,13 +92,15 @@ lang: [en, th]
 
 ![Diagram: a big agent writes a skill and hook, a small agent does the task, the hook checks, and a failure goes back to the big agent for a retrospective](../assets/line-dev-2026-skill-hook-loop.svg)
 
-<sub>วงจรนี้ภัทรวาดใหม่เองจากสไลด์และโน้ตของ talk นี้ค่ะ</sub>
+<sub>วงจรนี้สร้างด้วย Claude จากสไลด์และโน้ตของ talk นี้ค่ะ</sub>
 
 และมีคำเตือนเรียกว่า **Skill Hell** — trigger ทับกัน, คำสั่งชนกัน, และต้องอ่านมากเกินก่อนจะเริ่มทำ
 
 ### AI Infrastructure at Speed (คุณ Kajornsak Peerapathananont, Fastwork)
 
 เริ่มจากปัญหาที่เขาเรียกว่า *chasing AI*: API key ใครเป็นเจ้าของ ใช้ที่ไหน, ใครใช้ provider ไหน, บิลแยกกัน, ค่าใช้จ่ายเซอร์ไพรส์ ทางออกคือ **LiteLLM เป็น gateway เดียว** (virtual key ต่อทีม, budget, rate limit, model allow-list) + **Langfuse** ดู trace + **Onyx** (ความรู้ธุรกิจ) + **Sourcebot** (ค้นโค้ด) ประโยคปิดที่ดีคือ *"You probably don't need to build an AI platform from scratch"* — **adopt** เครื่องมือ, **build** ส่วนเชื่อม, **own** สถาปัตยกรรม governance และ developer experience
+
+ผู้บรรยายยังนำเครื่องมือภายในของบริษัทมาโชว์ด้วยค่ะ เพื่อให้เห็นว่าทีมใช้ Claude Team อยู่ แต่ดัดแปลงต่อให้เก็บข้อมูล prompt และการใช้งาน เอามาดูและคุมค่าใช้จ่ายจาก coding agent
 
 ![Slide: What does an internal AI platform actually need? Access, models, knowledge, observability, cost, developer experience](../assets/line-dev-2026-ai-platform-needs.jpg)
 
@@ -109,17 +112,7 @@ lang: [en, th]
 
 ## 5. Review by Tier
 
-ใน *The Bottleneck Moved* (คุณ Kittikorn Prasertsak, BorntoDev) ภัทรจดแนวคิด **review ตามระดับความเสี่ยง** ไว้ว่า:
-
-1. ชั้น 1: agent review
-2. ชั้น 2: developer ที่เกี่ยวข้องกับ change นั้น review
-3. ชั้น 3 (เช่น payment): senior review
-
-และอีกประโยคที่จดไว้: "everyone is a builder, but build a system that enables the process" — โน้ตยังมีคำถามเปิดไว้ว่า **TDD กับ agent ต้องทำยังไงเมื่องานเริ่มจาก Jira card** ซึ่งโน้ตทิ้งไว้เป็นคำถามเปิด
-
-หลังงาน LINE Developers Thailand โพสต์[สรุปเซสชันนี้](https://www.facebook.com/share/p/14yvojpxg5X/) ไว้ ภัทรเลยเอามาเติมในส่วนที่โน้ตจดไม่ทัน (ด้านล่างเป็นการสรุปความด้วยภาษาของภัทรจากโพสต์นั้น ไม่ใช่สไลด์ของผู้บรรยายโดยตรง)
-
-**โจทย์ของ talk:** ทีมเล็ก 3 คนที่ใช้ AI coding agent เปิด PR ได้ 40 งานต่อวัน จากเดิม 3-5 งาน คอขวดจึงย้ายไปอยู่ที่ *คนรีวิวและการเข้าใจระบบให้ทัน* เมื่อขยายคอขวดด้วยการเพิ่มคนไม่ได้ ทางออกคือ **ลดสิ่งที่ต้องไหลผ่านคอขวด** ด้วยสามเลเยอร์:
+ใน *The Bottleneck Moved* (คุณ Kittikorn Prasertsak, BorntoDev) ทางออกคือ **ลดสิ่งที่ต้องไหลผ่านคอขวด** ด้วยสามเลเยอร์:
 
 1. **Context**: ให้ agent รู้ขอบเขตและเหตุผลก่อนเขียน เช่น bounded module, AGENTS.md ที่สั้น, ADR ที่บันทึก *ว่าทำไม* และ contract/type ที่ฝังหน่วยกับข้อตกลงไว้ในโค้ด
 2. **Guardrails**: ให้เครื่องกรองก่อนถึงมือคน เช่น strict types, คุมด้วยสิทธิ์และ hook ไม่ใช่แค่สั่งใน prompt (เช่น PreToolUse hook ดักคำสั่งอันตราย, deny การอ่าน `.env`, แยก credential ของ agent จากของ developer), TDD แบบแยกวงจร และเรียง CI gate แบบ fail-fast
@@ -131,15 +124,15 @@ lang: [en, th]
 - **Tier 1** (~20 นาที): ฟีเจอร์ทั่วไปในโมดูลเดียว ใช้คนรีวิว 1 คน
 - **Tier 2** (~30 นาที + staged rollout): แตะไฟล์สำคัญ เช่น contract, auth, migration, payment, prod config หรือลบ flag เจ้าของระบบต้องตรวจละเอียด
 
-โน้ตของภัทรจดเป็น "agent → developer ที่เกี่ยวข้อง → senior (เช่น payment)" ซึ่งใกล้กับโพสต์ แต่ไม่เหมือนกันเป๊ะ: ในโพสต์ agent review เป็นด่านแรกของทุก PR ส่วนระดับแบ่งตามไฟล์ที่แตะ ภัทรไม่แน่ใจว่าความต่างนี้มาจากที่โพสต์สรุปไว้หรือจากที่ภัทรจดผิด
+ทั้งสามระดับมี agent review เป็นด่านแรกของทุก PR
 
-**คำถาม TDD กับ agent:** โพสต์ตอบทิศทางไว้ว่าอย่าให้ agent เขียนทั้งโค้ดและ test เอง เพราะเป็น "วงจรปิด" (test ผิดไปพร้อมโค้ดได้) และอ้างข้อมูลจาก ImpossibleBench ว่าโมเดลชั้นนำราวครึ่งหนึ่งมักแอบแก้ test ให้ผ่านเมื่อ test ขัดกับ spec ทางแก้คือเริ่มจาก test ที่แดงก่อน คนเป็นผู้อนุมัติ test และล็อกไฟล์ `/tests/spec/` ด้วย CODEOWNERS กับ deny rule ภัทรยังไม่รู้ว่าผู้บรรยายตอบเรื่อง "เริ่มจาก Jira card" ตรงกับที่ภัทรถามไว้หรือเปล่า
+**TDD กับ agent:** โพสต์ให้ทิศทางว่าอย่าให้ agent เขียนทั้งโค้ดและ test เอง เพราะเป็น "วงจรปิด" (test ผิดไปพร้อมโค้ดได้) และอ้างข้อมูลจาก ImpossibleBench ว่าโมเดลชั้นนำราวครึ่งหนึ่งมักแอบแก้ test ให้ผ่านเมื่อ test ขัดกับ spec ทางแก้คือเริ่มจาก test ที่แดงก่อน คนเป็นผู้อนุมัติ test และล็อกไฟล์ `/tests/spec/` ด้วย CODEOWNERS กับ deny rule
 
 **วัดผล:** โพสต์ปิดด้วยการวัด 5 ตัวเลขทุกเดือน ได้แก่ PR cycle time, time to first review, PR size, change failure rate และสัดส่วน PR ที่ merge โดยไม่มีคนรีวิว เหตุผลคืองานวิจัยที่อ้างพบว่านักพัฒนา *รู้สึก* ว่าเร็วขึ้น 20% แต่วัดจริงช้าลง 19% (ตัวเลขทั้งหมดในส่วนนี้มาจากโพสต์ ภัทรไม่ได้ตรวจกับต้นทาง)
 
 ![Diagram: three review tiers rising with risk: an agent, the developer involved in the change, and a senior for things like payments](../assets/line-dev-2026-review-tiers.svg)
 
-<sub>ภาพประกอบที่ภัทรวาดเองจากโพสต์สรุปของ LINE Developers Thailand ไม่ใช่สไลด์ของผู้บรรยายค่ะ</sub>
+<sub>ภาพประกอบนี้สร้างด้วย Claude จากโพสต์สรุปของ LINE Developers Thailand ไม่ใช่สไลด์ของผู้บรรยายค่ะ</sub>
 
 ---
 
@@ -157,7 +150,16 @@ lang: [en, th]
 
 ภัทรแยกเป็นสามเรื่องค่ะ
 
-**ฝั่งตัวเอง (career):** หา *ตำแหน่ง* ของตัวเองในฐานะ dev และหา flow ของตัวเอง ใช้ AI หาคุณค่าที่แท้จริง แก้ปัญหา และสร้างความเชี่ยวชาญเฉพาะทาง: รู้ context ของ domain และต่อจุดได้ เพราะ criticism จะสำคัญขึ้น ลองบอก AI ให้ **challenge เราหรือ grill เรา** แทนที่จะให้แค่ตอบ และหาสนามซ้อมที่เป็นปัญหาจริง เช่น hackathon
+**ฝั่งตัวเอง (career):** ภัทรมางานนี้เพื่อหา *ตำแหน่ง* ของตัวเองในฐานะ dev และหา flow ของตัวเอง ได้คำตอบเป็นสี่ข้อค่ะ
+
+1. **Skill stack ที่ไม่ต้องพึ่งบริษัท** โน้ตภัทรเขียนว่า "Design → Dev → Sale" ความหมายคือ skill stack ที่ dev ยุคนี้ควรมี ถ้าอยากโดดเด่นและไม่ผูกชีวิตไว้กับบริษัทเดียว
+2. **AI ทุกคนมี จึงต้องมี expertise** ผู้บรรยายพูดประเด็นนี้ (ภัทรไม่ได้จดว่าเป็นคนไหน) ส่วน expertise ที่ภัทรเลือกสร้างมีสองอย่างคือ **security thinking** กับ **การเปลี่ยน design ให้เป็น UI ที่ใช้งานได้จริง**
+3. **Criticism ต้องเป็นทักษะเดียวที่ใช้ครบสามทาง** คือภัทรวิจารณ์ผลของ AI เอง, สั่งให้ AI **challenge หรือ grill ภัทร** แทนที่จะให้แค่ตอบ และรับ feedback จากคน
+4. **Engineer sense สร้างจากการอธิบาย diff กลับ** เดือนนี้ภัทรจะอ่าน diff ที่ agent เขียนแล้วอธิบายด้วยคำของตัวเองให้ได้ก่อน merge ทุกครั้ง หลักที่ภัทรยึดคือ *รู้ว่าทำเองได้ แล้วใช้ AI ให้เร็วขึ้น*
+
+ขั้นต่อไปที่ภัทรตั้งใจคือ **หาสนามซ้อมที่เป็นปัญหาจริง** เช่น hackathon และเริ่มจาก **pain point เล็ก ๆ** แบบที่ live demo ของ LINE API เริ่ม ก่อนไปถึงตรงนั้น ภัทรจะลองวิธีนี้กับโปรเจกต์ของตัวเองก่อนค่ะ
+
+โพสต์สรุป panel *NEXT-GEN Survival Guides* ของ LINE Developers Thailand (คุณ Weera Kasetsin, คุณ Virot Chiraphadhanakul และคุณ Kasidis Satangmongkol) พูดเรื่องเดียวกันนี้จากอีกมุม ภัทรอ่านแล้วหยิบมาสามข้อที่ตรงกับที่ภัทรกำลังหาอยู่: (1) คุณ Weera บอกว่าไม่ใช่ "อวสาน Junior" แต่เป็นอวสานของ junior ที่ไม่เตรียมพร้อม และสิ่งที่พิสูจน์ได้คืองานที่ทำออกมาจริง เช่น การแข่งขันหรือสหกิจศึกษา (2) คุณ Virot แยก "โหมดทำงาน" กับ "โหมดเรียน" และเตือนว่า AI เป็นตัวคูณ ถ้าใช้โดยไม่เข้าใจก็คูณความผิดพลาด (3) ความรับผิดชอบยังเป็นของคน เพราะ AI รับผิดชอบแทนเมื่อระบบพังไม่ได้ ข้อ 3 ใกล้กับสมมติฐานเรื่อง debug ด้านล่างมาก (ผู้สรุปเป็นทีม LINE Developers Thailand ไม่ใช่คำพูดของผู้บรรยายแบบคำต่อคำ)
 
 โน้ตภัทรมีอีกส่วนที่ยังไม่ได้ผูกกับ talk ไหน: ผู้บรรยายยกการทดลองที่ให้ developer ทำงานแบบมี AI เทียบกับไม่มี AI โดยสมมติฐานคือ **ทักษะ debug และความรับผิดชอบต่อผลลัพธ์หายไปเมื่อใช้ coding agent** — ต้องเข้าใจ change ที่เกิดขึ้น ถามคำถามให้ถูก ประเมินผลกระทบ และรู้ว่าจะรับมือผลนั้นยังไง ภัทรไม่ได้จดรายละเอียดของการทดลองนั้น
 
@@ -167,11 +169,7 @@ lang: [en, th]
 
 **ฝั่งทีม:** ภัทรสรุป flow ใหม่ที่แต่ละ session เสนอเป็นสไลด์ เพื่อเอาไปคุยในทีมว่าหัวข้อไหนหยิบมาใช้ได้
 
-สองเรื่องที่ภัทรยังจดได้แค่ผิวเผิน:
-
-**Lockdown my sassy AI agent** (คุณ Neutron Soutmun, LINE) โน้ตจดเคส Hugging Face กับ exploitGym ไว้ว่าเป็นความเสี่ยงสูง ส่วนแนวป้องกันที่ภัทรจำได้คือ ตั้ง **gateway** ไม่ให้ agent ออกนอกเส้นทางที่กำหนด เพื่อปกป้องชื่อเสียงของบริษัท (จากความจำ ยังรอสไลด์) ถ้าสงสัยว่า ExploitGym คืออะไร: เป็น benchmark 898 ข้อจากช่องโหว่จริงใน userspace, V8 และ Linux kernel ที่ให้ AI agent ต่อยอดจาก input ที่กระตุ้นช่องโหว่ไปเป็น exploit ที่ใช้ได้ ([arXiv 2605.11086](https://arxiv.org/abs/2605.11086), พฤษภาคม 2026) ภัทรไม่รู้ว่าผู้บรรยายอ้างถึงงานชิ้นเดียวกันหรือไม่
-
-**TDD กับ agent เมื่อเริ่มจาก ticket** เป็นคำถามที่ภัทรจดไว้จาก *The Bottleneck Moved* คำตอบทิศทางอยู่ในส่วน Review by Tier ข้างบน แต่ยังเหลือเรื่อง ticket ที่ภัทรอยากเอาไปลองจริง
+**ที่ต้องบอกตรง ๆ:** ภัทรเห็นด้วยกับแนวคิดจากทุก session ที่เขียนไว้ในโพสต์นี้ ไม่มีข้อไหนที่ตั้งใจจะไม่ใช้ แต่ภัทรยังไม่ได้ลองอะไรเลยค่ะ ความเห็นด้วยโดยยังไม่ได้ลองไม่ใช่หลักฐาน โพสต์นี้จึงเป็นรายการของที่อยากลอง ไม่ใช่รายงานผล
 
 > ทำสิ่งที่มีประโยชน์และมีคุณค่าเป็นฐานตั้งต้นไว้ (เช่น มีค่าเท่ากับ 1 หรือ 10) AI จะเข้ามาทำหน้าที่เป็น "ตัวคูณพลัง" ที่เปลี่ยนจากสิ่งเล็ก ๆ ให้กลายเป็น Impact มหาศาลได้ในทุก ๆ วัน
 
@@ -182,5 +180,6 @@ lang: [en, th]
 ## Sources
 
 - Agenda: [LINE DEV CONF 2026](https://www.line-website.com/linedevconf2026-agenda)
-- Session summary of *The Bottleneck Moved*: [LINE Developers Thailand on Facebook](https://www.facebook.com/share/p/14yvojpxg5X/)
+- Read more about the sessions, from LINE Developers Thailand on Facebook:
+  - Sessions in the agenda above: summary posts on the [LINE Developers Thailand page](https://www.facebook.com/LINEDEVTH), tagged #LINEDEVCONF2026 (not every session has one)
 - Slides are photographed from the talks and credited to the speakers named above; this post is my notes, not the speakers' words.

@@ -5,7 +5,7 @@
 </defs>
 <rect width="1300" height="560" rx="24" fill="#F6F4EE"/>
 <text x="40" y="60" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#14181F">The skill and hook loop</text>
-<text x="40" y="92" font-family="system-ui, sans-serif" font-size="20" fill="#4F5864">From the Agent Skills talk, redrawn from my notes and photos.</text>
+<text x="40" y="92" font-family="system-ui, sans-serif" font-size="20" fill="#4F5864">From the Agent Skills talk, generated with Claude from my notes and photos.</text>
 <g font-family="system-ui, sans-serif" font-size="22" text-anchor="middle" fill="#14181F">
 <rect x="40" y="150" width="230" height="100" rx="14" fill="#E7E3D6" stroke="#B9B3A0" stroke-width="2"/>
 <text x="155" y="196" font-weight="700">Big agent</text>

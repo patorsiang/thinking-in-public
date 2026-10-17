@@ -4,7 +4,7 @@
 </defs>
 <rect width="1200" height="460" rx="24" fill="#F6F4EE"/>
 <text x="40" y="60" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#14181F">Review by risk tier</text>
-<text x="40" y="92" font-family="system-ui, sans-serif" font-size="20" fill="#4F5864">From a LINE Developers Thailand summary of “The Bottleneck Moved”, redrawn by me.</text>
+<text x="40" y="92" font-family="system-ui, sans-serif" font-size="20" fill="#4F5864">From a LINE Developers Thailand summary of “The Bottleneck Moved”, generated with Claude.</text>
 <g font-family="system-ui, sans-serif" text-anchor="middle">
 <rect x="60" y="250" width="340" height="110" rx="14" fill="#E7E3D6" stroke="#B9B3A0" stroke-width="2"/>
 <text x="230" y="284" font-size="24" font-weight="700" fill="#14181F">Tier 0 · about 5 min</text>
