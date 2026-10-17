@@ -15,7 +15,7 @@ lang: [en, th]
 
 มีเรื่องหนึ่งที่โผล่มาซ้ำจนสังเกตได้: หลาย session พูดเรื่องเดียวกันด้วยคนละชื่อ ว่า **การเขียนโค้ดไม่ใช่คอขวดอีกแล้ว** — คอขวดย้ายไปอยู่ที่การ review, การส่งต่องาน และการตกลงกันว่า "สำเร็จ" หน้าตาเป็นยังไง ชื่อ session หนึ่งอันก็พูดไว้ตรง ๆ (*The Bottleneck Moved*) ที่เหลือข้างล่างคือสิ่งที่ภัทรเห็นว่าแต่ละที่ตอบคำถามนี้ยังไง
 
-![Two rows of boxes: before, write code is the widest step; with agents, review, handoffs and agreeing what done means are the widest](../assets/line-dev-2026-bottleneck-moved.svg)
+![Two rows of boxes: before, write code is the widest step; with agents, review, handoffs and agreeing what done means are the widest](../assets/line-dev-2026-bottleneck-moved.png)
 
 <sub>ภาพประกอบนี้สร้างด้วย Claude จากโน้ตภาพรวมของทั้งวัน ไม่ใช่ข้อมูลที่วัดจริงค่ะ ความกว้างของกล่องแค่แทน "แรงที่ใช้"</sub>
 
@@ -90,7 +90,7 @@ lang: [en, th]
 
 <sub>สไลด์จากเซสชัน *How to teach your AI Agent with Agent skills* โดยคุณ Tanitphon Paniwan (Apppi) ภาพถ่ายโดยภัทร ครอบเฉพาะหน้าจอค่ะ</sub>
 
-![Diagram: a big agent writes a skill and hook, a small agent does the task, the hook checks, and a failure goes back to the big agent for a retrospective](../assets/line-dev-2026-skill-hook-loop.svg)
+![Diagram: a big agent writes a skill and hook, a small agent does the task, the hook checks, and a failure goes back to the big agent for a retrospective](../assets/line-dev-2026-skill-hook-loop.png)
 
 <sub>วงจรนี้สร้างด้วย Claude จากสไลด์และโน้ตของ talk นี้ค่ะ</sub>
 
@@ -130,7 +130,7 @@ lang: [en, th]
 
 **วัดผล:** โพสต์ปิดด้วยการวัด 5 ตัวเลขทุกเดือน ได้แก่ PR cycle time, time to first review, PR size, change failure rate และสัดส่วน PR ที่ merge โดยไม่มีคนรีวิว เหตุผลคืองานวิจัยที่อ้างพบว่านักพัฒนา *รู้สึก* ว่าเร็วขึ้น 20% แต่วัดจริงช้าลง 19% (ตัวเลขทั้งหมดในส่วนนี้มาจากโพสต์ ภัทรไม่ได้ตรวจกับต้นทาง)
 
-![Diagram: three review tiers rising with risk: an agent, the developer involved in the change, and a senior for things like payments](../assets/line-dev-2026-review-tiers.svg)
+![Diagram: three review tiers rising with risk: an agent, the developer involved in the change, and a senior for things like payments](../assets/line-dev-2026-review-tiers.png)
 
 <sub>ภาพประกอบนี้สร้างด้วย Claude จากโพสต์สรุปของ LINE Developers Thailand ไม่ใช่สไลด์ของผู้บรรยายค่ะ</sub>
 
