@@ -83,6 +83,8 @@ elsewhere: [https://medium.com/@napatcholthaipanich_6231/line-dev-conf-2026-what
 
 <sub>สไลด์ *What has to pass before a commit* จากเซสชัน Harness & Loop Engineering โดยคุณ Chokchai Faroongsarng (LINE) ภาพถ่ายโดยภัทร ครอบเฉพาะหน้าจอค่ะ</sub>
 
+pre-commit กับ pre-push hook แบบนี้ไม่ใช่ CI ค่ะ มันรันบนเครื่องเราเอง ก่อนโค้ดจะไปถึง remote ภัทรมองว่าปลอดภัยและไม่เสียค่าใช้จ่ายเพิ่ม เพราะไม่กิน CI minutes ไม่ต้องรอคิว และโค้ดที่พังไม่ออกจากเครื่อง การรัน E2E ก่อน commit หรือ push จึงเป็นเรื่องที่ทำได้ ในสไลด์ E2E อยู่ตอน push ถ้า E2E ช้าเกินไปก็ย้ายมาตรงนั้นได้ แต่ hook ข้ามได้ (เช่น `git commit --no-verify`) ภัทรเลยมอง hook เป็นด่านแรกที่เร็วและถูก ส่วน CI ยังต้องรันชุดเดียวกันซ้ำเป็นด่านกลางค่ะ
+
 ### How to Teach Your AI Agent with Agent Skills (คุณ Tanitphon Paniwan, Apppi)
 
 สไลด์ภาษาไทยที่เทียบสองอย่างนี้: **SKILL = บอกวิธีทำ, HOOK = คุมจุดตรวจ** — เปลี่ยนจาก "ให้ model คิดวิธีเอง" เป็น "ทำตาม process ที่ออกแบบไว้" แนวคิดคือ **knowledge distillation สำหรับ agent**: agent ตัวใหญ่เขียน SKILL.md กับ hook ให้ agent ตัวเล็กที่เร็วกว่าทำตาม ถ้าตัวเล็กทำผิดก็ส่งกลับให้ตัวใหญ่ทำ retrospective แล้วสร้าง skill/hook ใหม่ใช้ในรอบถัดไป
