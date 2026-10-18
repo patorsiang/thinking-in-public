@@ -127,9 +127,9 @@ elsewhere: [https://medium.com/@napatcholthaipanich_6231/line-dev-conf-2026-what
 
 ทั้งสามระดับมี agent review เป็นด่านแรกของทุก PR
 
-**TDD กับ agent:** โพสต์ให้ทิศทางว่าอย่าให้ agent เขียนทั้งโค้ดและ test เอง เพราะเป็น "วงจรปิด" (test ผิดไปพร้อมโค้ดได้) และอ้างข้อมูลจาก ImpossibleBench ว่าโมเดลชั้นนำราวครึ่งหนึ่งมักแอบแก้ test ให้ผ่านเมื่อ test ขัดกับ spec ทางแก้คือเริ่มจาก test ที่แดงก่อน คนเป็นผู้อนุมัติ test และล็อกไฟล์ `/tests/spec/` ด้วย CODEOWNERS กับ deny rule
+**TDD กับ agent:** โพสต์ให้ทิศทางว่าอย่าให้ agent เขียนทั้งโค้ดและ test เอง เพราะเป็น "วงจรปิด" (test ผิดไปพร้อมโค้ดได้) ทางแก้คือเริ่มจาก test ที่แดงก่อน คนเป็นผู้อนุมัติ test และล็อกไฟล์ `/tests/spec/` ด้วย CODEOWNERS กับ deny rule
 
-**วัดผล:** โพสต์ปิดด้วยการวัด 5 ตัวเลขทุกเดือน ได้แก่ PR cycle time, time to first review, PR size, change failure rate และสัดส่วน PR ที่ merge โดยไม่มีคนรีวิว เหตุผลคืองานวิจัยที่อ้างพบว่านักพัฒนา *รู้สึก* ว่าเร็วขึ้น 20% แต่วัดจริงช้าลง 19% (ตัวเลขทั้งหมดในส่วนนี้มาจากโพสต์ ภัทรไม่ได้ตรวจกับต้นทาง)
+**วัดผล:** โพสต์ปิดด้วยการวัด 5 ตัวเลขทุกเดือน ได้แก่ PR cycle time, time to first review, PR size, change failure rate และสัดส่วน PR ที่ merge โดยไม่มีคนรีวิว
 
 ![Diagram: three review tiers rising with risk: an agent, the developer involved in the change, and a senior for things like payments](../assets/line-dev-2026-review-tiers.png)
 
