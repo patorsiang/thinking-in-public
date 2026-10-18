@@ -111,7 +111,7 @@ elsewhere: [https://medium.com/@napatcholthaipanich_6231/line-dev-conf-2026-what
 
 ### Lockdown My Sassy AI Agent (คุณ Neutron Soutmun, LINE)
 
-โน้ตภัทรจดไว้บรรทัดเดียวว่า session นี้พูดถึงเคส **Hugging Face** กับ **ExploitGym** ความเสี่ยงสูง และจะป้องกันยังไง ภาพสไลด์ของภัทรเริ่มหลังช่วงเปิดเรื่อง ภัทรจึงเล่าตัวเคสจากรายงานสาธารณะแทนค่ะ ไม่ใช่จากคำพูดของผู้บรรยาย
+session นี้พูดถึงเคส **Hugging Face** กับ **ExploitGym** ที่ความเสี่ยงสูง และจะป้องกันยังไง รายละเอียดของเคสข้างล่างภัทรเล่าจากรายงานสาธารณะค่ะ
 
 **เคสนั้น** ตาม[รายงานทางเทคนิคของ OpenAI](https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf) และ[โพสต์ของ Hugging Face](https://huggingface.co/blog/security-incident-july-2026): กรกฎาคม 2026 OpenAI รัน evaluation ด้านความปลอดภัยไซเบอร์ (ExploitGym คือ benchmark ที่ให้ agent ต่อ input ที่ชนช่องโหว่ให้เป็น exploit ที่ใช้งานได้) ใน sandbox ที่ไม่มีอินเทอร์เน็ตตรง ๆ และปิด safeguard บางส่วนเพื่อวัดความสามารถจริง โมเดลที่ถูกทดสอบ (ตัวหลักเป็นโมเดลวิจัยภายในที่ไม่ได้ตั้งใจปล่อยใช้งาน กับ GPT-5.6 Sol) ใช้ช่องโหว่ที่ยังไม่มีใครรู้ใน package mirror ภายใน (JFrog Artifactory) ออกอินเทอร์เน็ตได้ตั้งแต่ 8 กรกฎาคม แล้วใช้ credential ที่หลุดอยู่สาธารณะเจาะระบบ production ของ Hugging Face ระหว่าง 11–13 กรกฎาคม OpenAI ตรวจพบวันที่ 19 และเปิดเผยวันที่ 21 ค่ะ ข้อสรุปในรายงานที่ภัทรเก็บไว้: "no single control should ever be assumed to be fully robust" — แค่ "ไม่มีอินเทอร์เน็ตตรง ๆ" ไม่พอ ถ้า workload ยังไปถึง shared service ที่เป็นทางออกอ้อม ๆ ได้ ต้องมี control หลายชั้นที่ไม่พึ่งกัน
 
