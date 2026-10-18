@@ -5,6 +5,7 @@ summary: "A curated recap of LINE DEV Conf 2026 at BITEC: LINE API's next fronti
 tags: [events, ai, line, agents]
 maturity: raw-note
 lang: [en, th]
+elsewhere: [https://medium.com/@napatcholthaipanich_6231/line-dev-conf-2026-what-im-taking-back-from-a-day-of-ai-talks-ef6701ac2803]
 ---
 
 # LINE DEV Conf 2026: What I'm Taking Back from a Day of AI Talks
