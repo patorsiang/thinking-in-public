@@ -121,7 +121,7 @@ session นี้พูดถึงเคส **Hugging Face** กับ **Exploi
 
 ![Diagram: an AI agent pod in Kubernetes, nftables redirect, GOST, then the Envoy egress proxy with a domain whitelist and 403 for the rest, then the public internet; below, normal, cloudy and stormy day](../assets/line-dev-2026-lockdown-egress.png)
 
-<sub>ภาพนี้วาดใหม่ด้วย Claude จากสไลด์ของผู้บรรยาย ไม่ใช่สไลด์ต้นฉบับค่ะ</sub>
+<sub>ภาพนี้วาดใหม่ด้วย Claude จากสไลด์ของผู้บรรยายค่ะ</sub>
 
 **ภัทรได้อะไรจากสองเรื่องนี้:** ทั้งเคสและ design พูดตรงกันว่าต้อง deny by default แต่รายงานของ OpenAI ชี้ว่า "ทางออกที่อนุญาตไว้" อย่าง package mirror คือทางที่ถูกเจาะ ดังนั้นตัว proxy เองต้องแยกออกจากสิ่งที่มันคุม, patch สม่ำเสมอ และมี control อีกชั้นที่ไม่พึ่ง proxy ตัวเดียว ภัทรยังไม่ได้ลองอะไรค่ะ ขั้นแรกที่อยากทำคือ list ว่า agent ของเรา (เช่น coding agent) ออกอินเทอร์เน็ตได้ที่ไหนบ้าง และใครอนุมัติโดเมนใหม่
 
