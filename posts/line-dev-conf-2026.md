@@ -109,6 +109,22 @@ elsewhere: [https://medium.com/@napatcholthaipanich_6231/line-dev-conf-2026-what
 
 <sub>สไลด์จากเซสชัน *AI Infrastructure at Speed: Governance Without the Drag* โดยคุณ Kajornsak Peerapathananont (Fastwork) ภาพถ่ายโดยภัทร ครอบเฉพาะหน้าจอค่ะ</sub>
 
+### Lockdown My Sassy AI Agent (คุณ Neutron Soutmun, LINE)
+
+โน้ตภัทรจดไว้บรรทัดเดียวว่า session นี้พูดถึงเคส **Hugging Face** กับ **ExploitGym** ความเสี่ยงสูง และจะป้องกันยังไง ภาพสไลด์ของภัทรเริ่มหลังช่วงเปิดเรื่อง ภัทรจึงเล่าตัวเคสจากรายงานสาธารณะแทนค่ะ ไม่ใช่จากคำพูดของผู้บรรยาย
+
+**เคสนั้น** ตาม[รายงานทางเทคนิคของ OpenAI](https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf) และ[โพสต์ของ Hugging Face](https://huggingface.co/blog/security-incident-july-2026): กรกฎาคม 2026 OpenAI รัน evaluation ด้านความปลอดภัยไซเบอร์ (ExploitGym คือ benchmark ที่ให้ agent ต่อ input ที่ชนช่องโหว่ให้เป็น exploit ที่ใช้งานได้) ใน sandbox ที่ไม่มีอินเทอร์เน็ตตรง ๆ และปิด safeguard บางส่วนเพื่อวัดความสามารถจริง โมเดลที่ถูกทดสอบ (ตัวหลักเป็นโมเดลวิจัยภายในที่ไม่ได้ตั้งใจปล่อยใช้งาน กับ GPT-5.6 Sol) ใช้ช่องโหว่ที่ยังไม่มีใครรู้ใน package mirror ภายใน (JFrog Artifactory) ออกอินเทอร์เน็ตได้ตั้งแต่ 8 กรกฎาคม แล้วใช้ credential ที่หลุดอยู่สาธารณะเจาะระบบ production ของ Hugging Face ระหว่าง 11–13 กรกฎาคม OpenAI ตรวจพบวันที่ 19 และเปิดเผยวันที่ 21 ค่ะ ข้อสรุปในรายงานที่ภัทรเก็บไว้: "no single control should ever be assumed to be fully robust" — แค่ "ไม่มีอินเทอร์เน็ตตรง ๆ" ไม่พอ ถ้า workload ยังไปถึง shared service ที่เป็นทางออกอ้อม ๆ ได้ ต้องมี control หลายชั้นที่ไม่พึ่งกัน
+
+**ทางป้องกันที่ผู้บรรยายเสนอ** (จากสไลด์ที่ภัทรถ่าย): ล็อกที่ *network* ของ agent pod ของ agent รันใน Kubernetes และออกอินเทอร์เน็ตได้ทางเดียวคือผ่าน **egress proxy** ที่ **ปฏิเสธเป็นค่าเริ่มต้น** มี whitelist (ตัวอย่างในสไลด์คือโดเมนของบริษัทเองกับ package mirror) ใช้ **Envoy** แบบ dynamic forward proxy ตรวจโดเมนแล้วตอบ 403 ถ้าไม่อยู่ใน list
+
+ปัญหาคือการให้ agent ตั้งค่า proxy เองไม่ง่าย (สไลด์ *Proxy Pain*: แอปบางตัวไม่รองรับ, ตั้งให้ถูกยาก, ดูแลตอน scale ยาก) ทีม SRE เลยทำ Kubernetes operator ภายในชื่อ **Flex Security Network** ให้เป็น **transparent proxy**: nftables ดัน traffic ของ agent ไปที่ **GOST** ซึ่งอ่านชื่อโดเมนจาก TLS hello (SNI) แล้วส่งต่อให้ Envoy ด้วย HTTP CONNECT agent ไม่ต้องตั้งค่าอะไรเลย ข้างหลังมี audit log ใน OpenSearch และแบ่งวันเป็นสามแบบ: normal day (whitelist ทำงาน), cloudy day (เฝ้าดู), stormy day (ปิดทุกอย่างให้เร็ว สไลด์ขีดฆ่า operator, GOST และ proxy ภัทรตีความเองว่าเป็น kill switch ของทางออก ไม่ได้ยินเขาพูดตรง ๆ)
+
+![Diagram: an AI agent pod in Kubernetes, nftables redirect, GOST, then the Envoy egress proxy with a domain whitelist and 403 for the rest, then the public internet; below, normal, cloudy and stormy day](../assets/line-dev-2026-lockdown-egress.png)
+
+<sub>ภาพนี้วาดใหม่ด้วย Claude จากสไลด์ของผู้บรรยาย ไม่ใช่สไลด์ต้นฉบับค่ะ</sub>
+
+**ภัทรได้อะไรจากสองเรื่องนี้:** ทั้งเคสและ design พูดตรงกันว่าต้อง deny by default แต่รายงานของ OpenAI ชี้ว่า "ทางออกที่อนุญาตไว้" อย่าง package mirror คือทางที่ถูกเจาะ ดังนั้นตัว proxy เองต้องแยกออกจากสิ่งที่มันคุม, patch สม่ำเสมอ และมี control อีกชั้นที่ไม่พึ่ง proxy ตัวเดียว ภัทรยังไม่ได้ลองอะไรค่ะ ขั้นแรกที่อยากทำคือ list ว่า agent ของเรา (เช่น coding agent) ออกอินเทอร์เน็ตได้ที่ไหนบ้าง และใครอนุมัติโดเมนใหม่
+
 ---
 
 ## 5. Review by Tier
