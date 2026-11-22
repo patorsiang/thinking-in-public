@@ -33,11 +33,11 @@ AI-DLC เป็น *วิธีการ* ส่วน Kiro เป็น *เ�
 
 หลักที่ทั้งสองชั้นใช้ร่วมกัน: **AI ไม่ได้เริ่มจากเขียนโค้ด แต่เริ่มจากถามและวางแผน แล้วรอคนอนุมัติ**
 
-ถ้าดูดี ๆ นี่คือ SDLC ที่เราคุ้นอยู่แล้ว (requirement → design → build → test → deploy) แค่คนร่างแต่ละขั้นเปลี่ยนจากคนเป็น AI ตรงกับที่คุณ thangman22 (Co-Founder และ Chief Product Officer ของ Wisesight และ Google Developer Expert สาย Web Technologies) เขียนไว้ว่า:
+ถ้าดูดี ๆ นี่คือ SDLC ที่เราคุ้นอยู่แล้ว (requirement → design → build → test → deploy) แค่คนร่างแต่ละขั้นเปลี่ยนจากคนเป็น AI ตรงกับที่พี่ตั้ง (thangman22, Co-Founder และ Chief Product Officer ของ Wisesight และ Google Developer Expert สาย Web Technologies) เขียนไว้ว่า:
 
 > "เรายังเชื่อนะว่า ต่อให้คนเขียน code จะเปลี่ยนไป แต่ SDLC เดิมก็ควรยังอยู่ไม่ใช่ทิ้งมันไปหมด"
 >
-> — thangman22
+> — พี่ตั้ง (thangman22)
 
 ---
 
@@ -70,11 +70,11 @@ architecture, sequence, error path และ test strategy ของฟีเจ
 **ขั้น 6 — Implement ทีละ unit → QA → Deploy**
 เขียนโค้ดพร้อม test ทีละ unit แล้วรัน build & test ครั้งเดียวตอนจบ ปิดด้วย deploy และ operation (dashboard, alarm, feedback)
 
-ช่วงนี้คือช่วงที่ "ใครเป็นคนลงมือ" สำคัญ ใน [โพสต์ "My Claude Code team"](https://www.facebook.com/share/p/1EbhkdAHwg/) thangman22 ให้ session หลักไม่เขียนโค้ดเอง แต่แจกงานให้ agent แต่ละสาย (web-dev, app-dev, devops, tester ฯลฯ) โดยใช้ `CLAUDE.md` เป็นตัว routing และปิดด้วย **build → test → review → push** ภัทรมองว่าสองแนวนี้ต่อกันได้: AI-DLC กำหนด *ลำดับ* และด่านอนุมัติ ส่วนทีม agent ตอบว่า *ใครทำ* แต่ละ unit (การต่อกันแบบนี้เป็นการตีความของภัทรค่ะ) มีจุดที่ต้องระวังด้วย docs ของ AI-DLC เขียนไว้ว่าการมี specialist แคบ ๆ เยอะเกินไปคือการสร้าง *handoff chain แบบ waterfall* ขึ้นมาใหม่ เลยเลือกใช้ agent น้อยตัวที่ทำได้กว้าง ("small mob, broad agents")
+ช่วงนี้คือช่วงที่ "ใครเป็นคนลงมือ" สำคัญ ใน [โพสต์ "My Claude Code team"](https://www.facebook.com/share/p/1EbhkdAHwg/) พี่ตั้งให้ session หลักไม่เขียนโค้ดเอง แต่แจกงานให้ agent แต่ละสาย (web-dev, app-dev, devops, tester ฯลฯ) โดยใช้ `CLAUDE.md` เป็นตัว routing และปิดด้วย **build → test → review → push** ภัทรมองว่าสองแนวนี้ต่อกันได้: AI-DLC กำหนด *ลำดับ* และด่านอนุมัติ ส่วนทีม agent ตอบว่า *ใครทำ* แต่ละ unit (การต่อกันแบบนี้เป็นการตีความของภัทรค่ะ) มีจุดที่ต้องระวังด้วย docs ของ AI-DLC เขียนไว้ว่าการมี specialist แคบ ๆ เยอะเกินไปคือการสร้าง *handoff chain แบบ waterfall* ขึ้นมาใหม่ เลยเลือกใช้ agent น้อยตัวที่ทำได้กว้าง ("small mob, broad agents")
 
 ![/thangman22 — claude code setup: My Claude Code team. A main session routes work with CLAUDE.md to eight agents (web-dev, app-dev, ai-engineer, devops, tester, feedback-triage, project-onboarder, simplifier), plus agent-skills by Addy Osmani (test-engineer, code-reviewer, security-auditor, web-performance-auditor); build, test, review, push](../assets/aidlc-2026-thangman22-claude-code-setup.png)
 
-<sub>ภาพ */thangman22 — claude code setup* จาก[โพสต์ของคุณ thangman22](https://www.facebook.com/share/p/1EbhkdAHwg/) ภาพและการจัดทีมเป็นงานของเขาค่ะ</sub>
+<sub>ภาพ */thangman22 — claude code setup* จาก[โพสต์ของพี่ตั้ง (thangman22)](https://www.facebook.com/share/p/1EbhkdAHwg/) ภาพและการจัดทีมเป็นงานของพี่ตั้งค่ะ</sub>
 
 **ตลอดทาง — Hooks**
 ในโน้ตภัทรเขียนว่า "IDE HOOKS (.kiro.md)" แต่ docs บอกว่าไฟล์จริงอยู่ที่ `.kiro/hooks/<id>.json` ค่ะ (ภัทรจดผิดเอง) hook ทำงานตาม event เช่น `FileSave`, `PromptSubmit`, `AgentStop` หรือ `PreToolUse` แล้วรันคำสั่ง (เช่น lint, test) หรือส่ง prompt ให้ agent ในโน้ตภัทรเขียนว่า *"standard together"* คือ hook ทำให้ทั้งทีมใช้มาตรฐานเดียวกันโดยไม่ต้องพึ่งความจำของแต่ละคน
@@ -293,7 +293,7 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 
 <sub>ภาพนี้ภัทรสร้างด้วย Claude ค่ะ การจับคู่เป็นความเห็นของภัทร</sub>
 
-ตอนจับคู่ ภัทรเห็นว่า **แทบไม่มีไฟล์ไหนใหม่จริง ๆ** ตรงกับคำของ thangman22 ข้างบนว่า SDLC เดิมยังอยู่ ทีมส่วนใหญ่มี acceptance criteria, design doc และ code review อยู่แล้ว สิ่งที่ AI-DLC เปลี่ยนคือ *ลำดับ*: ย้าย review ขึ้นมาก่อนโค้ด และให้ AI ร่างเอกสารพวกนี้แทนเรา
+ตอนจับคู่ ภัทรเห็นว่า **แทบไม่มีไฟล์ไหนใหม่จริง ๆ** ตรงกับคำของพี่ตั้งข้างบนว่า SDLC เดิมยังอยู่ ทีมส่วนใหญ่มี acceptance criteria, design doc และ code review อยู่แล้ว สิ่งที่ AI-DLC เปลี่ยนคือ *ลำดับ*: ย้าย review ขึ้นมาก่อนโค้ด และให้ AI ร่างเอกสารพวกนี้แทนเรา
 
 **ที่อยากชวนทีมที่ทำงานคุย** — ภัทรไม่ได้คิดว่าต้องใช้ทั้งชุด แต่อยากลองถามกันว่าขั้นไหนช่วยเราได้จริง เช่น:
 
@@ -317,17 +317,6 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 
 ## 9. Who Should Use It, and How Much
 
-### Is AI-DLC itself overengineering?
-
-ตอนเล่าเรื่องนี้ให้พี่ที่ภัทรปรึกษาฟัง พี่ตั้งคำถามว่า AI-DLC เองเป็น overengineering หรือเปล่า ภัทรว่าเป็นคำถามที่ดี และคำตอบขึ้นกับว่าเราหมายถึง *ตัว framework* หรือ *ไอเดียข้างใน*
-
-**ตัว framework — สำหรับงานส่วนใหญ่ ใช่ค่ะ** 5 phase, 33 stage, 14 agent, audit trail 134 ประเภท และเครื่องมือที่ต้องติดตั้ง อัปเดต และ pin เวอร์ชัน ทั้งหมดนี้ออกแบบมาสำหรับงานที่ต้อง audit ได้ หลายทีมทำพร้อมกัน หรือมีคนต้องรับผิดชอบเมื่อพลาด ถ้าเอาทั้งชุดมาใช้กับ side project หรือฟีเจอร์เล็ก ๆ ต้นทุนของกระบวนการจะมากกว่าความเสี่ยงที่มันกันไว้ profile อย่าง `poc` หรือ `express` ช่วยตัดขั้นได้ แต่ต้นทุนของการติดตั้งและดูแลตัวเครื่องมือยังอยู่
-
-**ไอเดียข้างใน — ไม่ใช่** ให้ AI ถามก่อนทำ, เขียนเกณฑ์ผ่านเป็น EARS, อนุมัติแผนก่อนโค้ด, แบ่งงานเป็น unit ที่ทำแยกกันได้ ทั้งหมดนี้ทำได้ด้วย Kiro spec ธรรมดา หรือ prompt ไม่กี่บรรทัดในเครื่องมือที่ใช้อยู่แล้ว
-
-ภัทรจึงสรุปแบบนี้: **ใช้ framework เมื่อขนาดของทีมหรือความเสี่ยงบังคับ** เช่น หลายทีม งานที่มี compliance หรือระบบที่ผิดแล้วแพง **ส่วนงานอื่น หยิบแค่ไอเดีย** แล้วค่อยเพิ่มขั้นเมื่อเจอปัญหาที่ขั้นนั้นแก้ได้จริง ไม่ใช่ใส่ไว้ก่อนเผื่อ
-
-
 ### Juniors: use it, but write before you read
 
 คำตอบของภัทรคือ **ควรใช้ แต่ใช้เป็นเครื่องฝึก ไม่ใช่ทางลัด**
@@ -340,7 +329,7 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 2. **อนุมัติเฉพาะสิ่งที่อธิบายได้** ถ้าอธิบายไม่ได้ว่าทำไม design ถึงเป็นแบบนี้ ให้ถาม AI กลับจนอธิบายได้ ก่อนกดผ่าน
 3. **ฝึกที่ `requirements.md` ก่อน** EARS เป็นทักษะที่ใช้ได้ทุกที่ แม้วันที่ไม่ได้ใช้ AI-DLC แล้ว
 
-**ไม่ให้กลายเป็น overengineering** — สัญญาณที่ภัทรใช้เตือนตัวเอง:
+**ใช้เท่าที่งานต้องการ** — ถ้าเจอสัญญาณเหล่านี้ แปลว่ากระบวนการเริ่มหนักกว่าตัวงานแล้ว:
 
 - เอกสาร spec ยาวกว่าโค้ดที่ได้
 - เปลี่ยนแค่ 20 บรรทัด แต่ผ่านมาสามด่าน
@@ -380,7 +369,6 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 ## 10. What I'm Taking Back
 
 - **ขั้นที่คุ้มที่สุดคือขั้นถาม** ถึงไม่ใช้เครื่องมือไหนเลย การให้ AI ถามคำถามก่อนลงมือ ก็ทำได้ด้วย prompt เดียว
-- **"Unit" คือคำที่ภัทรไม่เข้าใจในห้อง** และเป็นคำที่สำคัญที่สุดสำหรับงานทีม เพราะมันคือวิธีแบ่งงานให้คนหลายคนทำพร้อมกันได้
 - **ภัทรยังไม่ได้รัน AI-DLC กับงานจริง** นอกจากใน workshop ตัวอย่างในข้อ 3 เป็นการจำลองบนกระดาษ ข้อดีข้อเสียในข้อ 7 จึงเป็นสิ่งที่คาดไว้ ไม่ใช่ผลที่วัดได้ค่ะ
 
 ---
@@ -390,5 +378,5 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 - AI-DLC workflows (awslabs): [repo](https://github.com/awslabs/aidlc-workflows) · [phases and stages](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/04-phases-and-stages.md) · [workflow profiles](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/workflow-profiles.md) · [interaction modes](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/07-interaction-modes.md) · [writing a vision document](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/writing-inputs/vision-document-guide.md) · [glossary](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/glossary.md)
 - AWS blog: [AI-Driven Development Life Cycle](https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/)
 - Kiro docs: [specs](https://kiro.dev/docs/specs/) · [steering](https://kiro.dev/docs/steering/) · [hooks](https://kiro.dev/docs/hooks/)
-- thangman22: ["My Claude Code team"](https://www.facebook.com/share/p/1EbhkdAHwg/)
+- พี่ตั้ง (thangman22): ["My Claude Code team"](https://www.facebook.com/share/p/1EbhkdAHwg/)
 - Numbers (5 phases, 33 stages, stage counts per profile, v2.11.4) are from the AI-DLC docs, read 2026-11-22. This post is my notes, not the speakers' words.
