@@ -1,5 +1,5 @@
 ---
-title: "AI-DLC: Plan, Approve, Execute — What I Took from AWS's AI-Driven Development Lifecycle"
+title: "AI-DLC: Plan, Approve, Execute — What I Took from AWS's AI-Driven Development Life Cycle"
 date: 2026-11-22
 summary: "Notes from the AWS AI-DLC workshop on using Kiro with AI-DLC: the steps, a worked example, grilling a requirements.md, brownfield vs greenfield, choosing the ceremony, pros and cons, ideas to swap with my team before AI Skill Wars, and how a junior or a one-person team can use it without overengineering."
 tags: [events, ai, aws, kiro, workflow]
@@ -74,7 +74,7 @@ architecture, sequence, error path และ test strategy ของฟีเจ
 
 ![/thangman22 — claude code setup: My Claude Code team. A main session routes work with CLAUDE.md to eight agents (web-dev, app-dev, ai-engineer, devops, tester, feedback-triage, project-onboarder, simplifier), plus agent-skills by Addy Osmani (test-engineer, code-reviewer, security-auditor, web-performance-auditor); build, test, review, push](../assets/aidlc-2026-thangman22-claude-code-setup.png)
 
-<sub>ภาพ */thangman22 — claude code setup* จาก[โพสต์ของพี่ตั้ง (thangman22)](https://www.facebook.com/share/p/1EbhkdAHwg/) ภาพและการจัดทีมเป็นงานของพี่ตั้งค่ะ</sub>
+<sub>ภาพ */thangman22 — claude code setup* จาก[โพสต์ของพี่ตั้ง (thangman22)](https://www.facebook.com/share/p/1EbhkdAHwg/) ภาพและการจัดทีมเป็นงานของพี่ตั้งค่ะ ภาพนี้ไม่อยู่ภายใต้ license ของ repo นี้</sub>
 
 **ตลอดทาง — Hooks**
 ในโน้ตภัทรเขียนว่า "IDE HOOKS (.kiro.md)" แต่ docs บอกว่าไฟล์จริงอยู่ที่ `.kiro/hooks/<id>.json` ค่ะ (ภัทรจดผิดเอง) hook ทำงานตาม event เช่น `FileSave`, `PromptSubmit`, `AgentStop` หรือ `PreToolUse` แล้วรันคำสั่ง (เช่น lint, test) หรือส่ง prompt ให้ agent ในโน้ตภัทรเขียนว่า *"standard together"* คือ hook ทำให้ทั้งทีมใช้มาตรฐานเดียวกันโดยไม่ต้องพึ่งความจำของแต่ละคน
@@ -94,6 +94,8 @@ architecture, sequence, error path และ test strategy ของฟีเจ
 3. "สูง" คือเกินเท่าไร และใช้มาตรฐานของใคร?
 4. ข้อมูลมาจากไหน อัปเดตบ่อยแค่ไหน?
 5. เป็น greenfield หรือต้องต่อกับระบบเดิม?
+6. ถ้าค่าสูงต่อเนื่องหลายชั่วโมง ควรเตือนซ้ำไหม ห่างกันแค่ไหน?
+7. ถ้าดึงค่าฝุ่นไม่ได้ ระบบควรทำอะไร?
 
 **`requirements.md`** (EARS):
 
@@ -101,18 +103,22 @@ architecture, sequence, error path และ test strategy ของฟีเจ
 R1. WHEN a resident sends "subscribe" to the LINE bot
     THE SYSTEM SHALL store their user ID for the district.
 R2. WHEN the hourly PM2.5 reading is above the configured threshold
+    AND no alert was sent for the district in the last 6 hours
     THE SYSTEM SHALL send one alert to each subscriber.
-R3. WHILE the reading stays above the threshold
-    THE SYSTEM SHALL NOT send a second alert within 6 hours.
+R3. WHEN the hourly PM2.5 reading is above the configured threshold
+    AND an alert was already sent within the last 6 hours
+    THE SYSTEM SHALL NOT send another alert.
 R4. IF the air-quality API does not answer
     THEN THE SYSTEM SHALL log the failure and send no alert.
 ```
+
+R2 กับ R3 แยกกันด้วยเงื่อนไข "ส่งไปแล้วใน 6 ชั่วโมงหรือยัง" ทุกค่าที่อ่านได้เลยเข้าข้อเดียวเท่านั้น เช่น ค่าสูงตอน 13:00 → ส่ง (R2), สูงต่อตอน 14:00 → ไม่ส่ง (R3), ยังสูงตอน 19:00 → ส่งอีกครั้ง (R2)
 
 **Units of work:** Unit A = การสมัครรับแจ้งเตือน (R1), Unit B = อ่านค่าฝุ่นและตัดสินใจแจ้งเตือน (R2–R4) สองชิ้นนี้คุยกันผ่านตาราง subscribers ตารางเดียว ตกลง **contract** ของตารางนี้ก่อน แล้วสองคนแยกกันทำได้เลย
 
 **`tasks.md`:** A1 webhook + test R1 · B1 ดึงค่าพร้อม timeout + test R4 · B2 threshold และ cooldown 6 ชั่วโมง + test R2, R3
 
-สิ่งที่ภัทรเห็นจากการลองเขียนคือ **R3 กับ R4 ไม่โผล่ ถ้าไม่มีขั้นถาม** ถ้าสั่ง AI ว่า "ทำ bot แจ้งเตือนฝุ่น" ตรง ๆ ได้ bot ที่ส่งข้อความทุกชั่วโมงตอนฝุ่นสูง และเงียบไปเลยตอน API ล่มค่ะ
+สิ่งที่ภัทรเห็นจากการลองเขียนคือ **R3 กับ R4 ไม่โผล่ ถ้าไม่มีขั้นถาม** คำถามข้อ 6 กับ 7 คือที่มาของสองข้อนี้ ถ้าสั่ง AI ว่า "ทำ bot แจ้งเตือนฝุ่น" ตรง ๆ มีโอกาสได้ bot ที่ส่งข้อความทุกชั่วโมงตอนฝุ่นสูง และเงียบไปเลยตอน API ล่มค่ะ
 
 ---
 
@@ -194,9 +200,11 @@ tests. Mark which tasks can run in parallel.
 
 ทุก stage เรียกแบบเดียวกันได้ด้วย `/aidlc --stage <slug> --single`
 
+ข้อควรระวัง: ถ้ารันแบบ `--single` ใน workflow ที่มีอยู่แล้ว มันจะ**เขียนทับไฟล์ของ stage นั้น** (เก็บสำเนาเดิมไว้ใน `archive/`) โดยไม่ถามอนุมัติใหม่ ไฟล์ที่เราเคยอนุมัติไปแล้วจึงอาจไม่ใช่ฉบับเดิม ถ้าแค่อยากลอง ภัทรว่าเริ่ม intent ใหม่แยกไปเลยปลอดภัยกว่า และถ้าจะใช้ไฟล์ที่ถูกเขียนใหม่ ให้อ่าน diff เทียบกับฉบับที่อนุมัติไว้ก่อนค่ะ
+
 ### After the spec: what to do with the three files
 
-ได้ไฟล์ครบไม่ได้แปลว่าจบ สิ่งที่ภัทรจะเช็คก่อนกดผ่าน และหลังจากนั้น (ส่วนนี้เป็นความเห็นของภัทรค่ะ):
+ได้ไฟล์ครบไม่ได้แปลว่าจบ สิ่งที่ภัทรจะเช็กก่อนกดผ่าน และหลังจากนั้น (ส่วนนี้เป็นความเห็นของภัทรค่ะ):
 
 1. **ตรวจ design กับ requirements ทีละข้อ** ทุก requirement ต้องมีที่อยู่ใน design โดยเฉพาะบรรทัด `IF … THEN` ที่มักหายไปตอน design
 2. **ตรวจ tasks ว่าเล็กพอและชี้กลับได้** แต่ละ task ควรบอกได้ว่าทำเพื่อ requirement ข้อไหน และเล็กพอให้ review diff ได้ในรอบเดียว
@@ -304,11 +312,11 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 **สำหรับ AI Skill Wars** (ทีม 3–4 คน รู้โจทย์จริงในวันแข่ง วันแข่งใช้ได้แค่ Kiro และใช้ token pool จากผู้จัด):
 
 1. **ซ้อมใน Kiro ตั้งแต่ตอนนี้** วันแข่งไม่มีเวลามาเรียนเครื่องมือ ให้ทุกคนคุ้นกับ spec, steering และ hook ใน Kiro ก่อน
-2. **ใช้ token ให้คุ้ม** token pool มีจำกัด เลือก profile เล็ก (`express` หรือ `poc`) และใช้เวลาคิดกับคนมากกว่าให้ AI ร่างใหม่ซ้ำ ๆ
+2. **ใช้ token ให้คุ้ม** token pool มีจำกัด เลือก profile เล็ก (`express` หรือ `poc`) และใช้เวลาคิดกับคนมากกว่าให้ AI ร่างใหม่ซ้ำ ๆ แต่ต้องรู้ว่า profile เล็กข้ามบางขั้น: ทั้งสองข้าม Units Generation กับ Contract Design และ `express` ข้าม Intent Capture ด้วย ข้อ 5 กับ 6 ข้างล่างเลยเป็นสิ่งที่ทีมทำกันเองด้วยมือ ถ้าอยากให้ AI-DLC ร่างส่วนนี้ให้ ต้องใช้ profile ที่มีขั้นเหล่านี้ เช่น `mvp`
 3. **เตรียม `tech.md` กับ `structure.md` ไว้ก่อน** stack กับโครงโปรเจกต์ตกลงกันได้ตั้งแต่ตอนนี้ เหลือ `product.md` ไว้เขียนตอนได้โจทย์
 4. **เตรียม repo ส่วนตัวไว้ก่อน แล้วค่อย ๆ commit ขึ้น repo สาธารณะ** ข้อนี้มาจากพี่ที่ภัทรปรึกษาค่ะ เตรียมโครงและ steering ใน repo ส่วนตัวให้พร้อม แล้วทยอย commit ขึ้น repo สาธารณะทีละส่วน
-5. **ใช้ intent capture questions เป็นช่วงคุยโจทย์** ใช้เวลาสั้น ๆ ตอบคำถามพวกนี้ด้วยกันก่อนแยกย้าย
-6. **หนึ่งคนหนึ่ง unit** ตกลง contract ระหว่าง unit ก่อน แล้วแยกกันทำ
+5. **ใช้ intent capture questions เป็นช่วงคุยโจทย์** ใช้เวลาสั้น ๆ ตอบคำถามพวกนี้ด้วยกันก่อนแยกย้าย (ถามกันเองได้ ไม่ต้องรอ AI ถาม)
+6. **หนึ่งคนหนึ่ง unit** แบ่ง unit และตกลง contract ระหว่าง unit กันเองก่อน แล้วแยกกันทำ
 7. **ตั้ง hook ไว้ล่วงหน้า** lint และ test ทำงานเองทุกครั้งที่ save จะได้ไม่ต้องคอยเตือนกันตอนเร่ง
 
 ทั้งหมดนี้เป็นไอเดียตั้งต้นให้ทีมคุยกันต่อค่ะ ใครเห็นต่างหรือมีวิธีที่ดีกว่า ภัทรอยากฟัง
@@ -362,13 +370,13 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 3. **ใช้ profile เล็ก** `poc` สำหรับลองไอเดีย `mvp` เมื่อจะให้คนใช้จริง ข้าม Operation phase ไปก่อนจนกว่าจะมีผู้ใช้
 4. **ให้ hook ทำหน้าที่แทน reviewer** lint, type check และ test ที่รันเองทุกครั้ง คือ reviewer ที่ไม่เหนื่อย
 5. **ใช้ AI ตัวที่สองเป็น reviewer** ถ้าไม่มีคน ให้ AI จากอีกค่ายอ่าน diff หรือ spec แทน แต่ต้องตรวจสิ่งที่มันบอกเหมือนตรวจ comment ใน PR ไม่ใช่ทำตามทันที
-6. **คนเดียวในบริษัท: spec คือเอกสารส่งต่อ** วันที่มีคนมาแทนหรือมาช่วย `requirements.md` กับ `design.md` คือสิ่งที่อธิบายว่าทำไมระบบเป็นแบบนี้ โดยไม่ต้องมีเราอยู่ด้วย (ลด bus factor) ข้อนี้ภัทรว่าคุ้มกว่าตอนมีทีมเสียอีก
+6. **คนเดียวในบริษัท: spec คือเอกสารส่งต่อ** วันที่มีคนมาแทนหรือมาช่วย `requirements.md` กับ `design.md` คือสิ่งที่อธิบายว่าทำไมระบบเป็นแบบนี้ โดยไม่ต้องมีเราอยู่ด้วย (ลด bus factor คือลดความเสี่ยงที่งานทั้งหมดพึ่งคนคนเดียว) ข้อนี้ภัทรว่าคุ้มกว่าตอนมีทีมเสียอีก
 
 ---
 
 ## Sources
 
-- AI-DLC workflows (awslabs): [repo](https://github.com/awslabs/aidlc-workflows) · [phases and stages](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/04-phases-and-stages.md) · [workflow profiles](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/workflow-profiles.md) · [interaction modes](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/07-interaction-modes.md) · [writing a vision document](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/writing-inputs/vision-document-guide.md) · [glossary](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/glossary.md)
+- AI-DLC workflows (awslabs): [repo](https://github.com/awslabs/aidlc-workflows) · [phases and stages](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/04-phases-and-stages.md) · [workflow profiles](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/workflow-profiles.md) · [interaction modes](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/07-interaction-modes.md) · [writing a vision document](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/writing-inputs/vision-document-guide.md) · [glossary](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/glossary.md) · [stage-by-scope matrix](https://github.com/awslabs/aidlc-workflows/blob/v2.11.4/docs/guide/05-scopes-and-depth.md#stage-by-scope-matrix) · [`--single` command](https://github.com/awslabs/aidlc-workflows/blob/v2.11.4/docs/guide/12-cli-commands.md#aidlc---stage-slug---single--run-one-stage-in-isolation)
 - AWS blog: [AI-Driven Development Life Cycle](https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/)
 - Kiro docs: [specs](https://kiro.dev/docs/specs/) · [steering](https://kiro.dev/docs/steering/) · [hooks](https://kiro.dev/docs/hooks/)
 - พี่ตั้ง (thangman22): ["My Claude Code team"](https://www.facebook.com/share/p/1EbhkdAHwg/)
