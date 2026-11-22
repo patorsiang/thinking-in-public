@@ -366,13 +366,6 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 
 ---
 
-## 10. What I'm Taking Back
-
-- **ขั้นที่คุ้มที่สุดคือขั้นถาม** ถึงไม่ใช้เครื่องมือไหนเลย การให้ AI ถามคำถามก่อนลงมือ ก็ทำได้ด้วย prompt เดียว
-- **ภัทรยังไม่ได้รัน AI-DLC กับงานจริง** นอกจากใน workshop ตัวอย่างในข้อ 3 เป็นการจำลองบนกระดาษ ข้อดีข้อเสียในข้อ 7 จึงเป็นสิ่งที่คาดไว้ ไม่ใช่ผลที่วัดได้ค่ะ
-
----
-
 ## Sources
 
 - AI-DLC workflows (awslabs): [repo](https://github.com/awslabs/aidlc-workflows) · [phases and stages](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/04-phases-and-stages.md) · [workflow profiles](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/workflow-profiles.md) · [interaction modes](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/07-interaction-modes.md) · [writing a vision document](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/writing-inputs/vision-document-guide.md) · [glossary](https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/glossary.md)
