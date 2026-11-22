@@ -11,29 +11,29 @@ lang: [en, th]
 
 > โน้ตจาก workshop AI-DLC ของ AWS — ส่วนที่ภัทรจด เติมด้วย docs ทางการ และไอเดียที่อยากชวนทีมคุยแลกเปลี่ยนกันค่ะ
 
-วันศุกร์ที่ 20 พฤศจิกายน 2026 ภัทรไปเข้า workshop **AI-DLC (AI-Driven Development Life Cycle)** ของ AWS ซึ่งเป็น workshop ของการแข่งขัน **AI Skill Wars** ที่ทีมภัทรสมัครไว้ค่ะ workshop สอนวิธีใช้ **Kiro** ร่วมกับ AI-DLC และในวันแข่งรอบสุดท้าย กติกาคือ **ใช้ได้แค่ Kiro** โดยผู้จัดให้ token pool มาใช้ร่วมกัน
+วันศุกร์ที่ 20 พฤศจิกายน 2026 ภัทรไปเข้า workshop **AI-DLC (AI-Driven Development Life Cycle)** ของ AWS ซึ่งเป็น workshop ของการแข่งขัน **AI Skill Wars** ที่ทีมภัทรสมัครไว้ค่ะ workshop นี้เน้นแนะนำ **Kiro** กับ AI-DLC แล้วให้ผู้เข้าร่วมลองใช้เองมากกว่าลงรายละเอียดลึก ส่วนในวันแข่งรอบสุดท้าย กติกาคือ **ใช้ได้แค่ Kiro** โดยผู้จัดให้ token pool มาใช้ร่วมกัน
 
 ภัทรเขียนโพสต์นี้เพื่อสองอย่าง:
 
 1. บันทึกสิ่งที่ได้จาก workshop
 2. เป็นจุดเริ่มคุยกับทีม ทั้งทีมที่ทำงานและทีมที่แข่ง ภัทรไม่ได้มาบอกว่าทีมต้องทำแบบนี้ แค่อยากเอาสิ่งที่ได้ฟังมาแชร์ แล้วฟังว่าแต่ละคนคิดยังไงค่ะ
 
-โน้ตของภัทรในวันนั้นสั้นมาก ส่วนที่อธิบายเพิ่มจึงมาจาก [repo AI-DLC ของ awslabs](https://github.com/awslabs/aidlc-workflows) และ [docs ของ Kiro](https://kiro.dev/docs/specs/) ภัทรบอกไว้ทุกจุดว่าอะไรมาจากโน้ต อะไรมาจาก docs และอะไรเป็นความเห็นของภัทรเอง
+ในวันนั้นภัทรจดไว้เฉพาะคำที่อยากกลับมาค้นต่อ และจุดที่อยากเน้น โพสต์นี้จึงเป็นการตามค้นคำเหล่านั้นใน [repo AI-DLC ของ awslabs](https://github.com/awslabs/aidlc-workflows) และ [docs ของ Kiro](https://kiro.dev/docs/specs/) ตรงไหนที่เป็นความเห็นของภัทรเอง จะบอกไว้ค่ะ
 
 ---
 
 ## 1. Kiro and AI-DLC: Two Layers
 
-โน้ตภัทรเขียนสองเรื่องปนกัน พอกลับมาอ่าน docs ถึงเห็นว่าเป็นสองชั้น:
+คำที่ภัทรจดมามีสองเรื่องปนกัน พอกลับมาค้นใน docs ถึงเห็นว่าเป็นสองชั้น:
 
 - **Spec-driven development (Kiro)** คือ loop เล็กของ *หนึ่งฟีเจอร์*: `requirements.md → design.md → tasks.md → implement` แต่ละขั้นมีปุ่มให้คนอนุมัติก่อนไปขั้นถัดไป
-- **AI-DLC** คือ *ทั้ง lifecycle* ตั้งแต่จับ intent ไปจนถึง deploy และ operate โน้ตภัทรสรุปไว้สั้น ๆ ว่า **Plan → Approve → Execute** และ **Intent → Unit → QA**
+- **AI-DLC** คือ *ทั้ง lifecycle* ตั้งแต่จับ intent ไปจนถึง deploy และ operate ภัทรจดไว้ว่า **Plan → Approve → Execute** และ **Intent → Unit → QA**
 
 AI-DLC เป็น *วิธีการ* ส่วน Kiro เป็น *เครื่องมือ* ที่รันวิธีการนี้ได้ ตาม README ของ repo ตอนนี้ AI-DLC (v2.11.4) รันได้ทั้งใน Kiro, Claude Code, Codex CLI, Cursor, opencode และ GitHub Copilot ใน Kiro ตั้งค่าด้วย `aidlc config --harness kiro` แล้วเลือก agent ชื่อ **aidlc** ในช่องแชท
 
 หลักที่ทั้งสองชั้นใช้ร่วมกัน: **AI ไม่ได้เริ่มจากเขียนโค้ด แต่เริ่มจากถามและวางแผน แล้วรอคนอนุมัติ**
 
-ถ้าดูดี ๆ นี่คือ SDLC ที่เราคุ้นอยู่แล้ว (requirement → design → build → test → deploy) แค่คนร่างแต่ละขั้นเปลี่ยนจากคนเป็น AI ตรงกับที่ thangman22 content creator สาย dev ที่ภัทรติดตามเขียนไว้ว่า:
+ถ้าดูดี ๆ นี่คือ SDLC ที่เราคุ้นอยู่แล้ว (requirement → design → build → test → deploy) แค่คนร่างแต่ละขั้นเปลี่ยนจากคนเป็น AI ตรงกับที่คุณ thangman22 (Co-Founder และ Chief Product Officer ของ Wisesight และ Google Developer Expert สาย Web Technologies) เขียนไว้ว่า:
 
 > "เรายังเชื่อนะว่า ต่อให้คนเขียน code จะเปลี่ยนไป แต่ SDLC เดิมก็ควรยังอยู่ไม่ใช่ทิ้งมันไปหมด"
 >
