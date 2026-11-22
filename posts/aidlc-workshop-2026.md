@@ -72,9 +72,7 @@ architecture, sequence, error path และ test strategy ของฟีเจ
 
 ช่วงนี้คือช่วงที่ "ใครเป็นคนลงมือ" สำคัญ ใน [โพสต์ "My Claude Code team"](https://www.facebook.com/share/p/1EbhkdAHwg/) พี่ตั้งให้ session หลักไม่เขียนโค้ดเอง แต่แจกงานให้ agent แต่ละสาย (web-dev, app-dev, devops, tester ฯลฯ) โดยใช้ `CLAUDE.md` เป็นตัว routing และปิดด้วย **build → test → review → push** ภัทรมองว่าสองแนวนี้ต่อกันได้: AI-DLC กำหนด *ลำดับ* และด่านอนุมัติ ส่วนทีม agent ตอบว่า *ใครทำ* แต่ละ unit (การต่อกันแบบนี้เป็นการตีความของภัทรค่ะ) มีจุดที่ต้องระวังด้วย docs ของ AI-DLC เขียนไว้ว่าการมี specialist แคบ ๆ เยอะเกินไปคือการสร้าง *handoff chain แบบ waterfall* ขึ้นมาใหม่ เลยเลือกใช้ agent น้อยตัวที่ทำได้กว้าง ("small mob, broad agents")
 
-![/thangman22 — claude code setup: My Claude Code team. A main session routes work with CLAUDE.md to eight agents (web-dev, app-dev, ai-engineer, devops, tester, feedback-triage, project-onboarder, simplifier), plus agent-skills by Addy Osmani (test-engineer, code-reviewer, security-auditor, web-performance-auditor); build, test, review, push](../assets/aidlc-2026-thangman22-claude-code-setup.png)
-
-<sub>ภาพ */thangman22 — claude code setup* จาก[โพสต์ของพี่ตั้ง (thangman22)](https://www.facebook.com/share/p/1EbhkdAHwg/) ภาพและการจัดทีมเป็นงานของพี่ตั้งค่ะ ภาพนี้ไม่อยู่ภายใต้ license ของ repo นี้</sub>
+ภาพ *claude code setup* ของพี่ตั้งที่แสดงทีม agent ทั้งหมด ดูได้ที่[โพสต์ต้นทาง](https://www.facebook.com/share/p/1EbhkdAHwg/)ค่ะ
 
 **ตลอดทาง — Hooks**
 ในโน้ตภัทรเขียนว่า "IDE HOOKS (.kiro.md)" แต่ docs บอกว่าไฟล์จริงอยู่ที่ `.kiro/hooks/<id>.json` ค่ะ (ภัทรจดผิดเอง) hook ทำงานตาม event เช่น `FileSave`, `PromptSubmit`, `AgentStop` หรือ `PreToolUse` แล้วรันคำสั่ง (เช่น lint, test) หรือส่ง prompt ให้ agent ในโน้ตภัทรเขียนว่า *"standard together"* คือ hook ทำให้ทั้งทีมใช้มาตรฐานเดียวกันโดยไม่ต้องพึ่งความจำของแต่ละคน
