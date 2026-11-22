@@ -147,8 +147,52 @@ AI-DLC จะอ่านไฟล์ แล้วเขียนคำถาม
 
 พอ requirements ผ่านแล้ว ไม่ต้องเขียนสองไฟล์ที่เหลือเอง ให้ spec พาไปต่อ:
 
-- **ใน Kiro** กดอนุมัติ requirements แล้ว Kiro จะร่าง `design.md` จาก requirements ชุดนั้น เราตรวจและกดอนุมัติ แล้วมันถึงจะร่าง `tasks.md` ต่อ ทุกขั้นแก้ได้ก่อนกดผ่าน ถ้าเป็นงานที่ architecture ถูกกำหนดไว้แล้ว ใช้แบบ **design-first** ได้ คือเริ่มจาก design แล้วค่อยได้ requirements กับ tasks
-- **ใน AI-DLC** หลัง Requirements Analysis ผ่าน ขั้นถัดไปคือ Domain Design (ได้ `components.md` และ `decisions.md` ที่บันทึกเหตุผลของการตัดสินใจ) แล้ว Units Generation แบ่งงานเป็น unit ส่วนรายการงานของแต่ละ unit มาเป็น code plan ใน Construction ซึ่งเราต้องอนุมัติก่อน AI จะเขียนโค้ด ชื่อไฟล์ต่างจาก Kiro แต่หน้าที่เดียวกัน
+**ใน Kiro**
+กดอนุมัติ requirements แล้ว Kiro จะร่าง `design.md` จาก requirements ชุดนั้น เราตรวจและกดอนุมัติ แล้วมันถึงจะร่าง `tasks.md` ต่อ ทุกขั้นแก้ได้ก่อนกดผ่าน ถ้าเป็นงานที่ architecture ถูกกำหนดไว้แล้ว ใช้แบบ **design-first** ได้ คือเริ่มจาก design แล้วค่อยได้ requirements กับ tasks
+
+docs ของ Kiro ไม่ได้มีคำสั่งเฉพาะสำหรับ "เริ่มจากไฟล์ที่มีอยู่" แต่สร้าง Feature Spec แบบ requirements-first แล้วใส่เนื้อหาเข้าไปใน prompt แรกได้ prompt ข้างล่างเป็นของภัทรเองค่ะ ไม่ใช่คำสั่งทางการ:
+
+```text
+Create a requirements-first feature spec from the requirements below.
+Rewrite them in EARS, keep the IDs (R1, R2, ...), and list open
+questions instead of guessing. Do not start the design yet.
+
+<paste requirements.md here>
+```
+
+พออนุมัติ requirements แล้ว Kiro จะร่าง `design.md` ให้เอง ถ้าอยากกำหนดทิศทางให้ design บอกเพิ่มได้ เช่น:
+
+```text
+Draft design.md from the approved requirements. For every requirement
+ID, say which component handles it. Cover the error path for each
+IF ... THEN line and give a test strategy per requirement.
+```
+
+และตอนจะได้ `tasks.md`:
+
+```text
+Break the approved design into tasks small enough to review in one
+diff. Each task names the requirement IDs it covers and includes its
+tests. Mark which tasks can run in parallel.
+```
+
+**ใน AI-DLC**
+หลัง Requirements Analysis ผ่าน ขั้นถัดไปคือ Domain Design (ได้ `components.md` และ `decisions.md` ที่บันทึกเหตุผลของการตัดสินใจ) แล้ว Units Generation แบ่งงานเป็น unit ส่วนรายการงานของแต่ละ unit มาเป็น code plan ใน Construction ซึ่งเราต้องอนุมัติก่อน AI จะเขียนโค้ด ชื่อไฟล์ต่างจาก Kiro แต่หน้าที่เดียวกัน
+
+คำสั่งจาก docs ของ AI-DLC แบบเดินทั้ง flow (หยุดรอเราอนุมัติทุกด่าน):
+
+```text
+/aidlc Read ./requirements.md and build what it describes
+```
+
+หรือถ้าอยากได้ทีละขั้นโดยยังไม่เริ่ม workflow ทั้งชุด ใช้ *stage-runner* ซึ่งรันขั้นเดียวแล้วหยุด:
+
+```text
+/aidlc-requirements-analysis   # ตรวจและเขียน requirements ใหม่
+/aidlc-domain-design           # ได้ components.md + decisions.md
+```
+
+ทุก stage เรียกแบบเดียวกันได้ด้วย `/aidlc --stage <slug> --single`
 
 ### After the spec: what to do with the three files
 
@@ -273,9 +317,20 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 
 ## 9. Who Should Use It, and How Much
 
+### Is AI-DLC itself overengineering?
+
+ตอนเล่าเรื่องนี้ให้พี่ที่ภัทรปรึกษาฟัง พี่ตั้งคำถามว่า AI-DLC เองเป็น overengineering หรือเปล่า ภัทรว่าเป็นคำถามที่ดี และคำตอบขึ้นกับว่าเราหมายถึง *ตัว framework* หรือ *ไอเดียข้างใน*
+
+**ตัว framework — สำหรับงานส่วนใหญ่ ใช่ค่ะ** 5 phase, 33 stage, 14 agent, audit trail 134 ประเภท และเครื่องมือที่ต้องติดตั้ง อัปเดต และ pin เวอร์ชัน ทั้งหมดนี้ออกแบบมาสำหรับงานที่ต้อง audit ได้ หลายทีมทำพร้อมกัน หรือมีคนต้องรับผิดชอบเมื่อพลาด ถ้าเอาทั้งชุดมาใช้กับ side project หรือฟีเจอร์เล็ก ๆ ต้นทุนของกระบวนการจะมากกว่าความเสี่ยงที่มันกันไว้ profile อย่าง `poc` หรือ `express` ช่วยตัดขั้นได้ แต่ต้นทุนของการติดตั้งและดูแลตัวเครื่องมือยังอยู่
+
+**ไอเดียข้างใน — ไม่ใช่** ให้ AI ถามก่อนทำ, เขียนเกณฑ์ผ่านเป็น EARS, อนุมัติแผนก่อนโค้ด, แบ่งงานเป็น unit ที่ทำแยกกันได้ ทั้งหมดนี้ทำได้ด้วย Kiro spec ธรรมดา หรือ prompt ไม่กี่บรรทัดในเครื่องมือที่ใช้อยู่แล้ว
+
+ภัทรจึงสรุปแบบนี้: **ใช้ framework เมื่อขนาดของทีมหรือความเสี่ยงบังคับ** เช่น หลายทีม งานที่มี compliance หรือระบบที่ผิดแล้วแพง **ส่วนงานอื่น หยิบแค่ไอเดีย** แล้วค่อยเพิ่มขั้นเมื่อเจอปัญหาที่ขั้นนั้นแก้ได้จริง ไม่ใช่ใส่ไว้ก่อนเผื่อ
+
+
 ### Juniors: use it, but write before you read
 
-ภัทรเป็น junior เอง เลยคิดเรื่องนี้เยอะค่ะ คำตอบของภัทรคือ **ควรใช้ แต่ใช้เป็นเครื่องฝึก ไม่ใช่ทางลัด**
+คำตอบของภัทรคือ **ควรใช้ แต่ใช้เป็นเครื่องฝึก ไม่ใช่ทางลัด**
 
 ความเสี่ยงของ junior ไม่ใช่การใช้ AI-DLC แต่คือ **การกด approve สิ่งที่เรายังตัดสินไม่ได้** AI เขียน `design.md` ที่ดูดีได้เสมอ ถ้าเราไม่รู้ว่าทำไมมันเลือกแบบนั้น ด่านอนุมัติก็ไม่มีความหมาย และเราก็ไม่ได้เรียนอะไรจากมัน
 
