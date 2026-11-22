@@ -11,7 +11,7 @@ lang: [en, th]
 
 > โน้ตจาก workshop AI-DLC ของ AWS — ส่วนที่ภัทรจด เติมด้วย docs ทางการ และไอเดียที่อยากชวนทีมคุยแลกเปลี่ยนกันค่ะ
 
-วันศุกร์ที่ 20 พฤศจิกายน 2026 ภัทรไปเข้า workshop **AI-DLC (AI-Driven Development Life Cycle)** ของ AWS ซึ่งเป็น workshop ของการแข่งขัน **AI Skill Wars** ที่ทีมภัทรสมัครไว้ค่ะ workshop นี้เน้นแนะนำ **Kiro** กับ AI-DLC แล้วให้ผู้เข้าร่วมลองใช้เองมากกว่าลงรายละเอียดลึก ส่วนในวันแข่งรอบสุดท้าย กติกาคือ **ใช้ได้แค่ Kiro** โดยผู้จัดให้ token pool มาใช้ร่วมกัน
+วันศุกร์ที่ 20 พฤศจิกายน 2026 ภัทรไปเข้า workshop **AI-DLC (AI-Driven Development Life Cycle)** ของ AWS ซึ่งเป็น workshop ของการแข่งขัน **AI Skill Wars** ที่ทีมภัทรสมัครไว้ค่ะ workshop นี้แนะนำ **Kiro** กับ AI-DLC และให้ผู้เข้าร่วมได้ลงมือลองใช้จริงในห้อง ส่วนในวันแข่งรอบสุดท้าย กติกาคือ **ใช้ได้แค่ Kiro** โดยผู้จัดให้ token pool มาใช้ร่วมกัน
 
 ภัทรเขียนโพสต์นี้เพื่อสองอย่าง:
 
@@ -47,6 +47,8 @@ AI-DLC เป็น *วิธีการ* ส่วน Kiro เป็น *เ�
 
 <sub>ภาพนี้ภัทรสร้างด้วย Claude จากโน้ตและ docs ของ AI-DLC ค่ะ ตัดรายละเอียดออกเยอะ ของจริงมี 5 phase และ 33 stage</sub>
 
+**ถ้าใช้ Claude Code หรือ Codex แทน Kiro ภาพนี้เปลี่ยนไหม?** ลำดับและด่านอนุมัติเหมือนเดิมค่ะ เพราะ AI-DLC ใช้ engine ตัวเดียวกันทุกเครื่องมือ สิ่งที่เปลี่ยนมีแค่แถบ *Always on* ด้านล่าง: steering อยู่ใน `CLAUDE.md` หรือ `AGENTS.md` แทน `.kiro/steering/` และ hook ใช้ระบบ hook ของเครื่องมือนั้นแทน `.kiro/hooks/` ส่วนคำสั่งเริ่มคือ `/aidlc` ใน Claude Code และ `$aidlc` ใน Codex ชื่อไฟล์ `requirements.md`, `design.md`, `tasks.md` เป็นแบบของ Kiro ถ้ารันผ่าน AI-DLC เอกสารแต่ละขั้นจะเก็บอยู่ใต้ `aidlc/spaces/<space>/intents/` แทน
+
 **ขั้น 0 — Steering files (ทำครั้งเดียวต่อโปรเจกต์)**
 ใน Kiro คือไฟล์สามไฟล์ใน `.kiro/steering/`: `product.md` (ทำเพื่อใคร ทำอะไร), `tech.md` (stack และข้อจำกัด), `structure.md` (โครงโฟลเดอร์และ convention) AI อ่านทุกครั้งโดยไม่ต้องสั่ง เหมือน `CLAUDE.md` หรือ `AGENTS.md` (Kiro รองรับ `AGENTS.md` ด้วย)
 
@@ -69,6 +71,10 @@ architecture, sequence, error path และ test strategy ของฟีเจ
 เขียนโค้ดพร้อม test ทีละ unit แล้วรัน build & test ครั้งเดียวตอนจบ ปิดด้วย deploy และ operation (dashboard, alarm, feedback)
 
 ช่วงนี้คือช่วงที่ "ใครเป็นคนลงมือ" สำคัญ ใน [โพสต์ "My Claude Code team"](https://www.facebook.com/share/p/1EbhkdAHwg/) thangman22 ให้ session หลักไม่เขียนโค้ดเอง แต่แจกงานให้ agent แต่ละสาย (web-dev, app-dev, devops, tester ฯลฯ) โดยใช้ `CLAUDE.md` เป็นตัว routing และปิดด้วย **build → test → review → push** ภัทรมองว่าสองแนวนี้ต่อกันได้: AI-DLC กำหนด *ลำดับ* และด่านอนุมัติ ส่วนทีม agent ตอบว่า *ใครทำ* แต่ละ unit (การต่อกันแบบนี้เป็นการตีความของภัทรค่ะ) มีจุดที่ต้องระวังด้วย docs ของ AI-DLC เขียนไว้ว่าการมี specialist แคบ ๆ เยอะเกินไปคือการสร้าง *handoff chain แบบ waterfall* ขึ้นมาใหม่ เลยเลือกใช้ agent น้อยตัวที่ทำได้กว้าง ("small mob, broad agents")
+
+![/thangman22 — claude code setup: My Claude Code team. A main session routes work with CLAUDE.md to eight agents (web-dev, app-dev, ai-engineer, devops, tester, feedback-triage, project-onboarder, simplifier), plus agent-skills by Addy Osmani (test-engineer, code-reviewer, security-auditor, web-performance-auditor); build, test, review, push](../assets/aidlc-2026-thangman22-claude-code-setup.png)
+
+<sub>ภาพ */thangman22 — claude code setup* จาก[โพสต์ของคุณ thangman22](https://www.facebook.com/share/p/1EbhkdAHwg/) ภาพและการจัดทีมเป็นงานของเขาค่ะ</sub>
 
 **ตลอดทาง — Hooks**
 ในโน้ตภัทรเขียนว่า "IDE HOOKS (.kiro.md)" แต่ docs บอกว่าไฟล์จริงอยู่ที่ `.kiro/hooks/<id>.json` ค่ะ (ภัทรจดผิดเอง) hook ทำงานตาม event เช่น `FileSave`, `PromptSubmit`, `AgentStop` หรือ `PreToolUse` แล้วรันคำสั่ง (เช่น lint, test) หรือส่ง prompt ให้ agent ในโน้ตภัทรเขียนว่า *"standard together"* คือ hook ทำให้ทั้งทีมใช้มาตรฐานเดียวกันโดยไม่ต้องพึ่งความจำของแต่ละคน
@@ -136,6 +142,23 @@ AI-DLC จะอ่านไฟล์ แล้วเขียนคำถาม
 - **วัดได้ไหม** — คำว่า "เร็ว", "ง่าย", "ปลอดภัย" แปลงเป็นตัวเลขหรือ test ได้หรือยัง?
 
 ถ้าบรรทัดไหนเขียนเป็น test ไม่ได้ บรรทัดนั้นยังไม่ใช่ requirement ค่ะ
+
+### From `requirements.md` to `design.md` and `tasks.md`
+
+พอ requirements ผ่านแล้ว ไม่ต้องเขียนสองไฟล์ที่เหลือเอง ให้ spec พาไปต่อ:
+
+- **ใน Kiro** กดอนุมัติ requirements แล้ว Kiro จะร่าง `design.md` จาก requirements ชุดนั้น เราตรวจและกดอนุมัติ แล้วมันถึงจะร่าง `tasks.md` ต่อ ทุกขั้นแก้ได้ก่อนกดผ่าน ถ้าเป็นงานที่ architecture ถูกกำหนดไว้แล้ว ใช้แบบ **design-first** ได้ คือเริ่มจาก design แล้วค่อยได้ requirements กับ tasks
+- **ใน AI-DLC** หลัง Requirements Analysis ผ่าน ขั้นถัดไปคือ Domain Design (ได้ `components.md` และ `decisions.md` ที่บันทึกเหตุผลของการตัดสินใจ) แล้ว Units Generation แบ่งงานเป็น unit ส่วนรายการงานของแต่ละ unit มาเป็น code plan ใน Construction ซึ่งเราต้องอนุมัติก่อน AI จะเขียนโค้ด ชื่อไฟล์ต่างจาก Kiro แต่หน้าที่เดียวกัน
+
+### After the spec: what to do with the three files
+
+ได้ไฟล์ครบไม่ได้แปลว่าจบ สิ่งที่ภัทรจะเช็คก่อนกดผ่าน และหลังจากนั้น (ส่วนนี้เป็นความเห็นของภัทรค่ะ):
+
+1. **ตรวจ design กับ requirements ทีละข้อ** ทุก requirement ต้องมีที่อยู่ใน design โดยเฉพาะบรรทัด `IF … THEN` ที่มักหายไปตอน design
+2. **ตรวจ tasks ว่าเล็กพอและชี้กลับได้** แต่ละ task ควรบอกได้ว่าทำเพื่อ requirement ข้อไหน และเล็กพอให้ review diff ได้ในรอบเดียว
+3. **รันทีละ task แล้วอ่าน diff** ช่วงแรกอย่าเพิ่งกดรันทั้งหมดรวดเดียว จนกว่าจะไว้ใจว่า AI ทำตาม spec จริง
+4. **Commit spec ไว้กับโค้ด** ให้ PR ชี้กลับไปที่ spec คนที่ review จะได้รู้ว่าโค้ดนี้ตั้งใจทำอะไร
+5. **แก้ spec ก่อนแก้โค้ด** เมื่อ requirement เปลี่ยน กลับไปแก้ `requirements.md` ก่อน แล้วให้ design กับ tasks ตามมา ถ้าเจอ bug ทีหลัง ใช้ bugfix spec แยกอีกอัน
 
 ---
 
@@ -205,6 +228,18 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 - **Spec drift** ถ้าแก้โค้ดตรง ๆ โดยไม่กลับไปแก้ spec เอกสารจะโกหกในไม่กี่สัปดาห์
 - **เครื่องมือยังเปลี่ยนเร็ว** แค่ใน README ของ repo มีหมายเหตุว่าชื่อ flag ของ Kiro สลับกันระหว่างเวอร์ชัน 2.11.3 กับ 2.11.4 ถ้าทีมจะใช้ ต้อง pin เวอร์ชัน
 - **ไม่ได้แทน judgement** AI เขียน requirements ให้สวยได้ แต่คนยังต้องรู้ว่าอะไรคือของที่ควรสร้าง
+
+**ถ้าเริ่มจากเอกสารที่ละเอียดตั้งแต่แรก ข้อเสียลดลงไหม?**
+
+ลดลงบางข้อ แต่ไม่ทุกข้อค่ะ ภัทรไล่ทีละข้อ:
+
+- **Token และเวลา — ลดลง** AI ถามน้อยลงและร่างใหม่น้อยรอบลง docs ของ AI-DLC เองก็แนะนำให้เขียน vision หรือเอกสารตั้งต้นก่อนเริ่มงานที่ใหญ่
+- **Approval fatigue — ลดลงบ้าง** แต่ละด่านมีเรื่องให้แก้น้อยลง แต่จำนวนด่านยังเท่าเดิม ถ้าอยากลดด่านต้องเลือก profile ที่เล็กลง
+- **Spec drift — ไม่ลด** drift เกิดหลังเริ่มเขียนโค้ด เอกสารที่ละเอียดตอนเริ่ม ถ้าไม่ได้อัปเดต ก็ล้าสมัยได้เหมือนกัน และอาจล้าสมัยมากกว่า เพราะมีรายละเอียดให้ผิดมากกว่า
+- **เครื่องมือเปลี่ยนเร็ว — ไม่เกี่ยว**
+- **Judgement — อาจแย่ลง** ถ้าเอกสารละเอียดแต่ตั้งสมมติฐานผิด AI จะทำตามอย่างเป็นระเบียบ และถามแย้งน้อยลง เพราะดูเหมือนทุกอย่างถูกตัดสินแล้ว
+
+ภัทรจึงคิดว่าสิ่งที่ควรละเอียดตั้งแต่แรกคือ **เป้าหมายและขอบเขต** (ทำเพื่อใคร อะไรอยู่ใน/นอก scope อะไรห้ามเปลี่ยน) ไม่ใช่วิธีทำ และควรมีหัวข้อ "open questions" ไว้ด้วยเสมอ เพื่อบอก AI ว่าตรงไหนยังเปิดให้ถามค่ะ
 
 ---
 
