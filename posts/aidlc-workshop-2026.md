@@ -1,7 +1,7 @@
 ---
 title: "AI-DLC: Plan, Approve, Execute — What I Took from AWS's AI-Driven Development Lifecycle"
 date: 2026-11-22
-summary: "Notes from the AWS AI-DLC workshop on using Kiro with AI-DLC: the steps, a worked example, grilling a requirements.md, brownfield vs greenfield, choosing the ceremony, pros and cons, and ideas to swap with my team before AI Skill Wars."
+summary: "Notes from the AWS AI-DLC workshop on using Kiro with AI-DLC: the steps, a worked example, grilling a requirements.md, brownfield vs greenfield, choosing the ceremony, pros and cons, ideas to swap with my team before AI Skill Wars, and how a junior or a one-person team can use it without overengineering."
 tags: [events, ai, aws, kiro, workflow]
 maturity: raw-note
 lang: [en, th]
@@ -236,7 +236,58 @@ AI-DLC ทำให้การเลือกนี้ชัดขึ้น ถ
 
 ---
 
-## 9. What I'm Taking Back
+## 9. Who Should Use It, and How Much
+
+### Juniors: use it, but write before you read
+
+ภัทรเป็น junior เอง เลยคิดเรื่องนี้เยอะค่ะ คำตอบของภัทรคือ **ควรใช้ แต่ใช้เป็นเครื่องฝึก ไม่ใช่ทางลัด**
+
+ความเสี่ยงของ junior ไม่ใช่การใช้ AI-DLC แต่คือ **การกด approve สิ่งที่เรายังตัดสินไม่ได้** AI เขียน `design.md` ที่ดูดีได้เสมอ ถ้าเราไม่รู้ว่าทำไมมันเลือกแบบนั้น ด่านอนุมัติก็ไม่มีความหมาย และเราก็ไม่ได้เรียนอะไรจากมัน
+
+วิธีที่ภัทรจะใช้เอง:
+
+1. **เขียนเองก่อน แล้วค่อยให้ AI เขียน** ก่อนกด `/aidlc` ลองเขียน requirement 3–5 บรรทัด หรือตอบ intent questions ด้วยตัวเองก่อน แล้วค่อยเทียบกับของ AI ช่องว่างระหว่างสองฉบับคือสิ่งที่เราต้องเรียน (ตรงกับขั้น "recall before generate" ที่ภัทรเคยจดจาก LINE DEV Conf)
+2. **อนุมัติเฉพาะสิ่งที่อธิบายได้** ถ้าอธิบายไม่ได้ว่าทำไม design ถึงเป็นแบบนี้ ให้ถาม AI กลับจนอธิบายได้ ก่อนกดผ่าน
+3. **ฝึกที่ `requirements.md` ก่อน** EARS เป็นทักษะที่ใช้ได้ทุกที่ แม้วันที่ไม่ได้ใช้ AI-DLC แล้ว
+
+**ไม่ให้กลายเป็น overengineering** — สัญญาณที่ภัทรใช้เตือนตัวเอง:
+
+- เอกสาร spec ยาวกว่าโค้ดที่ได้
+- เปลี่ยนแค่ 20 บรรทัด แต่ผ่านมาสามด่าน
+- steering files ยาวกว่า README และไม่มีใครอ่านจบ
+- กด approve ติดกันโดยไม่ได้อ่าน
+
+หลักง่าย ๆ ของภัทร: **ถ้าอธิบายงานได้ในประโยคเดียว และย้อนกลับได้ใน commit เดียว ไม่ต้องมี spec** ให้ AI ถามคำถามเรา 3 ข้อก่อนลงมือก็พอ ถ้าไม่ใช่ ค่อยเปิด spec หรือ profile เล็ก (`express`, `bugfix`) แล้วขยายเมื่องานบังคับเท่านั้น
+
+### Grill vs Spec
+
+ภัทรใช้ทั้งสองอย่าง และเคยสับสนว่ามันต่างกันยังไง:
+
+- **Grill** คือให้ AI ซักเรา ถามจี้ทีละข้อจนเจอจุดที่เรายังไม่ได้คิด (ภัทรใช้ skill ที่ทำหน้าที่นี้ใน Claude Code) ผลลัพธ์คือ *การตัดสินใจ* และความเข้าใจในหัวเรา
+- **Spec** (ของ Kiro หรือ AI-DLC) คือ *เอกสาร* ที่ AI ร่าง คนอนุมัติ และเป็นตัวกำหนดว่าจะสร้างอะไร ผลลัพธ์คือไฟล์ที่คนอื่นและ AI session ถัดไปอ่านต่อได้
+
+![Grill versus spec. Grill: AI questions you; the output is decisions in your head; best before you know what to build; cheap to throw away. Spec: AI drafts, you approve; the output is files others can read; best once you know what to build; it gates the build. Use grill to decide, then spec to record and build.](../assets/aidlc-2026-grill-spec.png)
+
+<sub>ภาพนี้ภัทรสร้างด้วย Claude ค่ะ การเทียบเป็นความเห็นของภัทร</sub>
+
+สองอย่างนี้ไม่ได้แข่งกัน **grill ใช้ตัดสินใจ spec ใช้บันทึกและสร้าง** ลำดับที่ภัทรใช้คือ grill ก่อน (ควรทำไหม ทำเพื่อใคร อะไรอยู่นอก scope) แล้วเอาคำตอบไปเป็น input ของ spec จริง ๆ แล้ว intent capture questions ของ AI-DLC ก็คือ grill รอบสั้นที่ฝังไว้ในขั้นแรกของ spec นั่นเองค่ะ ถ้าข้ามการ grill แล้วไปเปิด spec เลย AI จะช่วยเรา *สร้างสิ่งที่ยังไม่แน่ใจว่าควรสร้าง* ได้อย่างเป็นระเบียบมาก
+
+### Side projects and the one-person team
+
+ทั้ง side project และคนที่เป็น dev คนเดียวในบริษัท มีปัญหาเดียวกัน: **ไม่มีใครมา review** ด่านอนุมัติของ AI-DLC ตั้งอยู่บนสมมติฐานว่ามีคนอ่าน ถ้าคนอ่านคือเราคนเดียว ด่านต้องน้อยลง และทุกด่านที่เหลือต้องอ่านจริง
+
+สิ่งที่ภัทรแนะนำ (จากการทำ side project ของตัวเอง ยังไม่ได้ลองกับ AI-DLC เต็มรูปแบบ):
+
+1. **Steering files คุ้มที่สุด** เขียน `AGENTS.md` หรือ steering สามไฟล์ครั้งเดียว ได้ผลทุก session และใช้ได้ทุกเครื่องมือ ไม่ต้องใช้ Kiro ก็ได้
+2. **Grill ตอนเลือกว่าจะทำอะไร spec ตอนทำของที่มีความเสี่ยง** side project ตายเพราะสร้างของที่ไม่มีใครใช้บ่อยกว่าเพราะโค้ดพัง ใช้ grill กับคำถาม "ควรทำไหม" ส่วน spec เก็บไว้ใช้กับงานที่แตะข้อมูล, auth หรือเงิน
+3. **ใช้ profile เล็ก** `poc` สำหรับลองไอเดีย `mvp` เมื่อจะให้คนใช้จริง ข้าม Operation phase ไปก่อนจนกว่าจะมีผู้ใช้
+4. **ให้ hook ทำหน้าที่แทน reviewer** lint, type check และ test ที่รันเองทุกครั้ง คือ reviewer ที่ไม่เหนื่อย
+5. **ใช้ AI ตัวที่สองเป็น reviewer** ถ้าไม่มีคน ให้ AI จากอีกค่ายอ่าน diff หรือ spec แทน แต่ต้องตรวจสิ่งที่มันบอกเหมือนตรวจ comment ใน PR ไม่ใช่ทำตามทันที
+6. **คนเดียวในบริษัท: spec คือเอกสารส่งต่อ** วันที่มีคนมาแทนหรือมาช่วย `requirements.md` กับ `design.md` คือสิ่งที่อธิบายว่าทำไมระบบเป็นแบบนี้ โดยไม่ต้องมีเราอยู่ด้วย (ลด bus factor) ข้อนี้ภัทรว่าคุ้มกว่าตอนมีทีมเสียอีก
+
+---
+
+## 10. What I'm Taking Back
 
 - **ขั้นที่คุ้มที่สุดคือขั้นถาม** ถึงไม่ใช้เครื่องมือไหนเลย การให้ AI ถามคำถามก่อนลงมือ ก็ทำได้ด้วย prompt เดียว
 - **"Unit" คือคำที่ภัทรไม่เข้าใจในห้อง** และเป็นคำที่สำคัญที่สุดสำหรับงานทีม เพราะมันคือวิธีแบ่งงานให้คนหลายคนทำพร้อมกันได้
