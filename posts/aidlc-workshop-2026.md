@@ -5,6 +5,7 @@ summary: "Notes from the AWS AI-DLC workshop on using Kiro with AI-DLC: the step
 tags: [events, ai, aws, kiro, workflow]
 maturity: raw-note
 lang: [en, th]
+elsewhere: [https://medium.com/@napatcholthaipanich_6231/ai-dlc-plan-approve-execute-what-i-took-from-awss-ai-driven-development-life-cycle-34888dc9d804]
 ---
 
 # AI-DLC: Plan, Approve, Execute
